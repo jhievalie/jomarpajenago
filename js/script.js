@@ -27,14 +27,26 @@ function mobileNav() {
     });
 }
 
-// Smooth scrolling functionality
+// Smooth scrolling functionality with margin adjustment
 function smoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetSection = document.querySelector(this.getAttribute('href'));
+
+            if (targetSection) {
+                // Apply temporary margin-top to create space for lift-up effect
+                targetSection.style.transition = 'margin-top 0.5s ease-out, opacity 0.5s ease-out';
+                targetSection.style.marginTop = '2rem';
+                targetSection.style.opacity = '0';
+
+                setTimeout(() => {
+                    // Remove opacity to make it visible with the transition
+                    targetSection.style.opacity = '1';
+                    // Scroll into view smoothly
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }, 300); // Delay ensures margin applies before scrolling
+            }
         });
     });
 }
@@ -44,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileNav();
     smoothScroll();
 });
+
 
 
 
