@@ -1352,9 +1352,10 @@ footer {
     position: block !important;
     z-index: 5;
     flex-direction: column;
-    margin-top: -20%;
+    margin-top: -15%;
+    margin-bottom: 15%;
     height: auto !important;
-    padding: 4rem 5% 0;
+    padding: 1rem 5% 0;
   }
 
   .about_me>div {
@@ -1364,6 +1365,7 @@ footer {
 
   .about_me h1 {
     text-align: center;
+    margin-top: -20%;
     margin-bottom: 20px;
   }
 
