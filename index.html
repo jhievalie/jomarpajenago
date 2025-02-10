@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jomar Pajenago</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <i class="fas fa-briefcase"></i> Jomar P.
+                <span class="small-text">Data Entry Specialist</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+            <div class="burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="hero">
+                <div class="text">
+                    <h1>I analyze data <br />to drive insights <br />and decisions</h1>
+                    <p>
+                        Hi! I'm from the Philippines, and I have a passion
+                        for managing data efficiently and delivering accurate results.
+                    </p>
+                    <a href="file/Jomar Pajenago_Resume.pdf" download class="btn-download">Download CV</a>
+                </div>
+                <div class="image">
+                    <img src="images/me_img3.png" alt="Jomar">
+                </div>
+            </div>
+        </section>
+
+
+        <!-- <section id="about">
+            <div class="about_me">
+                <div class="image"></div>
+                <div class="text">
+                    <h1>About Me</h1>
+                    <p>I’m a detail-oriented data analyst and administrative assistant with a strong background in data entry, management, and automation. With years of experience working remotely, I’ve honed my skills in Excel, Google Sheets, and other related tools, making me highly efficient in handling large datasets and streamlining workflows. My expertise lies in improving operational processes by leveraging data-driven insights and optimizing tasks through automation.<br><br>
+                        I’m passionate about finding creative solutions to complex problems, and I thrive in dynamic, fast-paced environments. My goal is to consistently deliver accurate, insightful reports and help businesses make informed decisions. Currently, I work flexible night shifts, balancing multiple projects while ensuring a smooth and productive workday for clients.</p>
+                </div>
+            </div>
+        </section> -->
+        <section id="about">
+            <div class="container">
+                <div class="about_me text">
+                    <!-- Left Side: About Me Content -->
+                    <div class="about_me_tab">
+                        <h2>About Me</h2>
+                        <p>
+                            I’m a detail-oriented data analyst and administrative assistant with a strong background in
+                            data entry, management, and automation. With years of experience working remotely, I’ve
+                            honed my skills in Excel, Google Sheets, and other related tools, making me highly efficient
+                            in handling large datasets and streamlining workflows. My expertise lies in improving
+                            operational processes by leveraging data-driven insights and optimizing tasks through
+                            automation.
+                            <br><br>
+                            I’m passionate about finding creative solutions to complex problems, and I thrive in
+                            dynamic, fast-paced environments. My goal is to consistently deliver accurate, insightful
+                            reports and help businesses make informed decisions. Currently, I work flexible night
+                            shifts, balancing multiple projects while ensuring a smooth and productive workday for
+                            clients.
+                        </p>
+                    </div>
+
+                    <!-- Right Side: Tab Links and Content -->
+                    <div class="tab-container about-hidden">
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab(event, 'tools')">Tools</p>
+                        </div>
+
+                        <div class="tab-contents active-tab" id="skills">
+                            <p>
+                                <span>Google Sheets & MS Excel:<br></span> Data Analysis, Entry, Validation, and
+                                Normalization <br><br>
+                                <span>SQL:<br></span> Experience in creating queries and managing databases <br><br>
+                                <span>Shopify & Looker Studio:<br></span> Proficient in eCommerce platforms and data
+                                visualization <br><br>
+                                <span>Google Analytics & Ads Managers:<br></span> Analyzing web traffic and optimizing
+                                online ads <br><br>
+                                <span>Amazon & Tableau:<br></span> Building reports and dashboards for business
+                                insights
+                            </p>
+                        </div>
+
+                        <div class="tab-contents" id="experience">
+                            <p>
+                                <span>Freelance Data Analyst:<br></span> Automated data analysis tasks, improved
+                                accuracy,
+                                and developed performance dashboards. <br><br>
+                                <span>Administrative Assistant:<br></span> Developed reports, trained new employees, and
+                                improved administrative processes for the City Government of Antipolo. <br><br>
+                                <span>Revenue Collection Clerk:<br></span> Handled cash transactions and provided
+                                customer
+                                support for the City Government of Antipolo.
+                            </p>
+                        </div>
+
+                        <div class="tab-contents" id="tools">
+                            <div class="tool-row">
+                                <div class="tool-item">
+                                    <img src="images/excel.png" alt="MS Excel Icon">
+                                </div>
+                                <div class="tool-item">
+                                    <img src="images/google-sheets.png" alt="Google Sheets Icon">
+                                </div>
+                                <div class="tool-item">
+                                    <img src="images/google-analytics.png" alt="Google Analytics Icon">
+                                </div>
+                            </div>
+                            <div class="tool-row">
+                                <div class="tool-item">
+                                    <img src="images/shopify.png" alt="Shopify Icon">
+                                </div>
+                                <div class="tool-item">
+                                    <img src="images/amazon.png" alt="Amazon Icon">
+                                </div>
+                                <div class="tool-item">
+                                    <img src="images/sql.png" alt="SQL Icon">
+                                </div>
+                            </div>
+                            <div class="tool-row">
+                                <div class="tool-item">
+                                    <img src="images/looker.png" alt="Looker Studio Icon">
+                                </div>
+                                <div class="tool-item">
+                                    <img src="images/tableau.png" alt="Tableau Icon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toogle-about">
+                    <button id="toggle-aboutme" onclick="toggleAboutMe()">See more</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="services">
+            <div class="services_me">
+                <div class="text">
+                    <h1>Services</h1>
+                    <p>Details about my work and skills as a remote freelancer.</p>
+                </div>
+                <!-- Grid section -->
+                <div class="services-grid">
+                    <!-- Service 1: Data Analyst -->
+                    <div class="service-item">
+                        <h2>Data Analyst</h2>
+                        <p>I help businesses understand their data through clear and insightful reports. Using tools
+                            like MS Excel, Google Sheets, and Tableau, I turn raw data into actionable insights. Whether
+                            it's creating dashboards or analyzing trends, I ensure your data works for you.</p>
+                    </div>
+                    <!-- Service 2: Data Entry Specialist -->
+                    <div class="service-item service-hidden">
+                        <h2>Data Entry Specialist</h2>
+                        <p>I specialize in organizing and maintaining accurate data records. With attention to detail, I
+                            handle data entry tasks using tools like Excel and Google Sheets, ensuring everything is
+                            precise and ready for use. Your data is in good hands.</p>
+                    </div>
+                    <!-- Service 3: Scrape with Python -->
+                    <div class="service-item service-hidden">
+                        <h2>Scrape with Python</h2>
+                        <p>I use Python to collect data from websites for research or analysis. I ensure the data is
+                            clean and formatted for your needs. Whether it's for business insights or project support, I
+                            help gather the right information efficiently.</p>
+                    </div>
+                    <!-- Service 4: Research Analyst -->
+                    <div class="service-item service-hidden">
+                        <h2>Research Analyst</h2>
+                        <p>I use data tools to gather and analyze information, ensuring accuracy and relevance.
+                            Whether for market research, trend analysis, or decision-making, I provide insights to
+                            support your goals efficiently.</p>
+                    </div>
+                </div>
+                <div class="toogle-service">
+                    <button id="toggle-services" onclick="toggleServices()">See more</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projects">
+            <div class="projects_me">
+                <div class="text">
+                    <h1>Projects</h1>
+                    <p>Details about my projects.</p>
+                </div>
+                <div class="project-group">
+                    <div class="project-item">
+                        <div class="text-item">
+                            <h2>Sales Dashboard</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel amet, architecto alias eligendi nihil sit. Delectus cum incidunt doloribus esse nemo! Placeat cumque blanditiis porro. Laboriosam modi voluptatem at?</p>
+                            <p><a href="https://example.com/sales-dashboard" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                        </div>
+                        <div class="project-item-img">
+                            <a href="https://example.com/sales-dashboard" target="_blank">
+                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-item projects-hidden">
+                        <div class="text-item">
+                            <h2>AAA Gas Prices - Scraping</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio fuga voluptas quo sequi perferendis harum necessitatibus, consequuntur facere ipsa, eius sed magnam eligendi quisquam voluptate quibusdam, ad asperiores quam repellat.</p>
+                            <p><a href="https://example.com/scraping" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                        </div>
+                        <div class="project-item-img">
+                            <a href="https://example.com/scraping" target="_blank">
+                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img2">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-item projects-hidden">
+                        <div class="text-item">
+                            <h2>Tableau Public</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem molestiae labore officiis rem commodi qui, veritatis numquam? Unde repellat aperiam aspernatur eius sint deserunt, doloribus architecto id repellendus dolores?</p>
+                            <p><a href="https://example.com/sales-dashboard" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                        </div>
+                        <div class="project-item-img">
+                            <a href="https://example.com/sales-dashboard" target="_blank">
+                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img3">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-item projects-hidden">
+                        <div class="text-item">
+                            <h2>Philippine Statistics</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eos saepe aliquam quisquam adipisci, suscipit quibusdam tenetur, nesciunt reprehenderit alias, sequi voluptatem dicta eligendi fugiat accusantium commodi enim! Iusto?</p>
+                            <p><a href="https://example.com/ph-statistics"" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                        </div>
+                        <div class="project-item-img">
+                            <a href="https://example.com/ph-statistics" target="_blank">
+                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img4">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="toogle-project">
+                    <button id="toggle-projects" onclick="toggleProjects()">See more</button>
+                </div>
+            </div>
+        </section>
+        
+        
+
+    </main>
+
+
+    <footer>
+        <!-- Footer Content -->
+        <div class="footer-content">
+            <!-- Left Section - Contacts and Social Icons -->
+            <div id="contacts" class="footer-left">
+                <h2>Contacts</h2>
+                <p><i class="fas fa-paper-plane"></i>jomarpajenago@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i>+639567092024</p>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/jomarp21" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/vampot" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/jhiepajenago/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/jomarpajenago21" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Section - Contact Me -->
+            <div class="footer-right">
+                <form name="submit-to-google-sheet">
+                    <h3>Send me a message</h3>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <input type="text" name="Subject" placeholder="Subject" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2024. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
