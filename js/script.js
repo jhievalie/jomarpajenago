@@ -1,3 +1,44 @@
+// Span small-text
+const titles = ["Data Entry Specialist", "Data Analyst", "Reports Specialist", "Research Analyst"];
+let titleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const pauseBetweenTitles = 1000;
+
+function typeSubtitle() {
+    const subtitleElement = document.getElementById("subtitle");
+    const currentTitle = titles[titleIndex];
+
+    if (!isDeleting) {
+        subtitleElement.innerHTML = currentTitle.substring(0, charIndex + 1);
+        charIndex++;
+
+        if (charIndex === currentTitle.length) {
+            isDeleting = true;
+            setTimeout(typeSubtitle, pauseBetweenTitles); // Pause before deleting
+            return;
+        }
+    } else {
+        subtitleElement.innerHTML = currentTitle.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            isDeleting = false;
+            titleIndex = (titleIndex + 1) % titles.length; // Move to the next title
+        }
+    }
+
+    setTimeout(typeSubtitle, isDeleting ? deletingSpeed : typingSpeed);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    typeSubtitle(); // Start the typing effect when the page loads
+});
+
+
+
 // Mobile navigation functionality
 function mobileNav() {
     const burger = document.querySelector('.burger');
