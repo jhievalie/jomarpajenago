@@ -72,17 +72,35 @@ nav {
   margin-right: 1rem;
 }
 
-.logo .small-text {
+/* .logo .small-text {
   font-size: 0.9rem;
   font-weight: normal;
   color: var(--primary-color);
   margin-left: 1rem;
+} */
+
+.small-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: inline-block;
+  border-right: 2px solid var(--primary-color); /* Cursor effect */
+  padding: 0 2px 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* .logo:hover {
   color: var(--secondary-color);
 } */
 
+/* nav span {
+  width: 30ch;
+  text-wrap: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(20) infinite;
+  animation-direction: alternate-reverse;
+} */
 
 .nav-links {
   display: flex;
@@ -807,7 +825,7 @@ footer {
 
 
 /* For smaller screen sizes */
-@media screen and (min-width: 769px) and (max-width: 1026px) {
+@media screen and (min-width: 769px) and (max-width: 1200px) {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
