@@ -85,7 +85,7 @@ nav {
   color: var(--primary-color);
   display: inline-block;
   border-right: 2px solid var(--primary-color); /* Cursor effect */
-  padding: 0 2px 0 10px;
+  padding: 0 2px 0 20px;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -1229,6 +1229,11 @@ footer {
   .burger {
     display: block;
     cursor: pointer;
+  }
+
+  .small-text {
+    font-size: 12px;
+    padding: 0 2px 0 10px;
   }
 
   .nav-active {
