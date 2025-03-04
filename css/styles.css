@@ -461,26 +461,18 @@ h2 {
 
 .service-item {
   background-color: var(--background-color);
-  padding: 20px;
+  padding: 2em;
   text-align: center;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1;
 }
 
 .service-item:hover {
   cursor: pointer;
-  /* background-color: #3f454b; */
   background-color: rgba(var(--background-color-rgb),0.7);
   transform: translateY(-10px);
-}
-
-.service-item:hover h2 {
-  color: var(--primary-color);
-}
-
-.service-item:hover p {
-  color: #ffffff;
 }
 
 /* Overlay Effect for Text Readability */
@@ -495,10 +487,7 @@ h2 {
   z-index: -1;
 }
 
-/* 
-.hidden {
-  display: block;
-} */
+
 
 #toggle-services {
   display: none;
@@ -512,7 +501,6 @@ h2 {
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s;
-  padding: 1rem 2rem;
 }
 
 #toggle-services:hover {
@@ -535,6 +523,66 @@ h2 {
   gap: 1rem;
   grid-template-columns:
   repeat(auto-fit, minmax(300px, 1fr));
+} */
+
+/* Trial - Card */
+/* #cardy {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  margin: 0 auto;
+  padding: 2em;
+  width: 500px;
+  background: var(--background-color);
+  text-align: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.card:hover::after,
+.card:hover::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(var(--background-color-rgb),0.7);
+  background-image: conic-gradient(from var(--angle), transparent 70%, blue);
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  padding: 3px;
+  border-radius: 10px;
+  opacity: 1;
+  animation: 3s spin linear infinite;
+}
+
+.card::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 } */
 
 
