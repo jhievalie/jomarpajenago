@@ -14,6 +14,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 html {
@@ -508,7 +510,6 @@ h2 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   /* Slightly darker blue */
 }
-
 
 
 /* Trial for Services */
@@ -1577,7 +1578,7 @@ footer {
 
   #toggle-services:hover {
     background-color: #2980b9;
-    /* Slightly darker blue */
+    -webkit-tap-highlight-color: transparent;
   }
 
 
