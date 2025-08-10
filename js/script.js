@@ -175,53 +175,46 @@ function setActiveLink() {
 
 
 
-// Select all sections with class '.container' inside each 'section'
-const section = document.querySelectorAll('section .container');
+// Select all section elements
+// const sections = document.querySelectorAll('section');
 
 // Get the Home section and exempt it from the transition
 const homeSection = document.querySelector('#home'); // Assuming Home section has an ID of 'home'
 
-// Options for the IntersectionObserver
-const observerOptions = {
-    root: null,           // Default root (viewport)
-    threshold: 0.25,      // Trigger when 25% of the section is visible
-};
-
-// Create an IntersectionObserver
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        // Exempt the Home section and observe others
-        if (entry.isIntersecting && entry.target !== homeSection) {
-            // Apply a "pull-up" effect and increase opacity
-            entry.target.style.transition = "transform 1s, opacity 1s"; // Smooth transition for both transform and opacity
-            entry.target.style.opacity = "1"; // Full opacity
-            entry.target.style.transform = "translateY(0)"; // Pull the section up
-
-            // Disconnect the observer after the section has entered the viewport
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe each section except for the Home section
-sections.forEach(section => {
-    if (section !== homeSection) {
-        // Initially hide the sections and set their starting transform position
-        section.style.opacity = "0";
-        section.style.transform = "translateY(50px)"; // Start below the viewport
-        observer.observe(section);
+// --- Fade in while scrolling ---
+sections.forEach(sec => {
+    if (sec !== homeSection) {
+        sec.style.opacity = "0";
+        sec.style.transform = "translateY(50px)";
+        sec.style.transition = "opacity 0.6s ease-out, transform 0.6s ease-out"; // smoother
+        sec.style.willChange = "opacity, transform"; // hint for performance
     }
 });
 
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        if (sec === homeSection) return; // skip home
 
+        const rect = sec.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
 
+        // Calculate how much of the section is visible (clamped between 0 and 1)
+        const visibleRatio = Math.min(Math.max((windowHeight - rect.top) / (windowHeight * 0.75), 0), 1);
 
+        // Apply opacity and upward movement based on scroll
+        sec.style.opacity = visibleRatio;
+        sec.style.transform = `translateY(${50 * (1 - visibleRatio)}px)`;
+    });
+});
+// --- end fade in while scrolling ---
 
 // Listen to the scroll event to update the active link
 window.addEventListener('scroll', setActiveLink);
 
 // Initial call to set the active link based on the initial scroll position
 setActiveLink();
+
+
 
 
 function opentab(event, tabname) {
