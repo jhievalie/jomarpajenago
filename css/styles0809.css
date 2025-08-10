@@ -5,7 +5,7 @@
   --secondary-color: #2ecc71;
   --background-color: #373747;
   --background-color-rgb: 55, 55, 71;
-  --background-color2: #3c3c44;
+  --background-color2: #585863;
   --text-color: #ffffff;
   --light-text-color: #777;
 }
@@ -161,14 +161,14 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* main {
-  margin-top: 2%;
+main {
+  margin-top: 3%;
   padding: 1rem 5%;
-} */
+}
 
-/* section {
+section {
   margin-top: 1%;
-} */
+}
 
 /* Sections */
 #home {
@@ -251,6 +251,8 @@ nav {
 }
 
 
+
+
 h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -270,16 +272,16 @@ h2 {
   border-radius: 15px;
   overflow: hidden;
   /* margin-top: 5%; */
+  margin: 8% 0;
 }
 
 /* Flexbox for About Me Section */
 .about_me {
   display: flex;
   flex-direction: row;
-  height: 450px;
-  padding: 4rem 150px;
-  margin-top: -2%;
-  margin-bottom: -3%;
+  height: 760px;
+  padding: 4rem 100px;
+  /* margin-top: 5%; */
 }
 
 
@@ -293,7 +295,7 @@ h2 {
 
 .about_me h2 {
   font-size: 2rem;
-  margin-top: -2rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: var(--primary-color);
 }
@@ -414,7 +416,7 @@ h2 {
   justify-content: center;
   align-items: center;
   padding: 4.7rem 5%;
-  /* margin-top: -10%; */
+  /* margin-top: -20%; */
   margin-bottom: 8%;
   border-radius: 15px;
   background-color: var(--background-color2);
@@ -759,10 +761,6 @@ h2 {
   font-size: 1.1rem;
 }
 
-.skills h2 {
-    margin-top: -10px;
-}
-
 .skills-grid, .tools-row {
   display: flex;
   flex-wrap: wrap;
@@ -781,37 +779,14 @@ h2 {
   color: #3498db;
 }
 
-.tools {
-    height: auto;
-    margin-bottom: 10%;
-}
-
-.tools h2 {
-    margin-top: 50px;
-}
-
-.tools-row img,
-.tools-row i,
-.tools-row span.iconify {
-  height: 100px;
+.tools-row img {
+  height: 50px;
   margin: 0 15px;
   transition: transform 0.3s ease;
 }
 
-.tools-row img,
-.tools-row i,
-.tools-row span.iconify {
-  transition: transform 0.3s ease;
-}
-
-.tools-row img:hover,
-.tools-row i:hover,
-.tools-row span.iconify:hover {
+.tools-row img:hover {
   transform: scale(1.1);
-}
-
-.tools-row span.iconify {
-  display: inline-block;
 }
 
 
@@ -1069,7 +1044,7 @@ footer {
     flex-direction: column;
 
     height: auto;
-    /* margin: 0; */
+    margin: 0;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     padding: 10rem 20vh 20rem;
   }
@@ -1194,34 +1169,8 @@ footer {
     max-width: 100%;
   }
 
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .skill-item i {
-    font-size: 2rem;
-    margin-bottom: 8px;
-  }
 
-  .tool-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
-  }
-  
-  .tool-item img {
-    height: 30px;
-    width: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  
+
 
   /* Services */
   .services_me {
@@ -1493,8 +1442,6 @@ footer {
     flex-direction: column;
     height: auto;
     margin: 0;
-    margin-top: 30%;
-    margin-bottom: 50%;
   }
 
   .hero .image img {
@@ -1536,7 +1483,7 @@ footer {
     position: block !important;
     z-index: 5;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: -15%;
     margin-bottom: 15%;
     height: auto !important;
     padding: 1rem 5% 0;
@@ -1545,10 +1492,6 @@ footer {
   .about_me>div {
     height: auto;
     padding: 0;
-  }
-
-  .about_me h2 {
-    margin-top: 5%;
   }
 
   .about_me h1 {
@@ -1646,34 +1589,6 @@ footer {
     /* Slightly darker blue */
   }
 
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
-  
-  .skill-item i {
-    font-size: 2rem;
-    margin-bottom: 8px;
-  }
-
-  .tool-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 50px;
-  }
-  
-  .tool-item img {
-    height: 30px;
-    width: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-
 
 
   /* Services */
@@ -1714,7 +1629,7 @@ footer {
 
   /* Projects Section */
   .projects_me {
-    margin-top: 20%;
+    margin-top: 10%;
     flex-direction: column;
     height: auto;
     padding: 2rem 5%;

@@ -14,10 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap"
         rel="stylesheet" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="css/styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 
@@ -25,7 +27,7 @@
     <header>
         <nav>
             <a href="#home" class="logo">
-                <i class="fas fa-briefcase"></i> Jomar P. 
+                <i class="fas fa-briefcase"></i> Jomar P.
                 <span class="small-text" id="subtitle"></span>
             </a>
             <ul class="nav-links">
@@ -52,10 +54,10 @@
                         Hi! I'm from the Philippines, and I have a passion
                         for managing data efficiently and delivering accurate results.
                     </p>
-                    <a href="file/Jomar Pajenago_Resume.pdf" download class="btn-download">Download CV</a>
+                    <a href="file/Hi, I'm Jomar.pdf" download class="btn-download">Download CV</a>
                 </div>
                 <div class="image">
-                    <img src="images/me_img3.png" alt="Jomar">
+                    <!-- <img src="images/me_img3.png" alt="Jomar"> -->
                 </div>
             </div>
         </section>
@@ -94,7 +96,7 @@
                     </div>
 
                     <!-- Right Side: Tab Links and Content -->
-                    <div class="tab-container about-hidden">
+                    <!-- <div class="tab-container about-hidden">
                         <div class="tab-titles">
                             <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
                             <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
@@ -106,7 +108,7 @@
                                 <span>Google Sheets & MS Excel:<br></span> Data Analysis, Entry, Validation, and
                                 Normalization <br><br>
                                 <span>SQL:<br></span> Experience in creating queries and managing databases <br><br>
-                                <span>Shopify & Looker Studio:<br></span> Proficient in eCommerce platforms and data
+                                <span>Shopify & Looker Studio:<br></span> Proficient in e-Commerce platforms and data
                                 visualization <br><br>
                                 <span>Google Analytics & Ads Managers:<br></span> Analyzing web traffic and optimizing
                                 online ads <br><br>
@@ -126,9 +128,9 @@
                                 customer
                                 support for the City Government of Antipolo.
                             </p>
-                        </div>
+                        </div> -->
 
-                        <div class="tab-contents" id="tools">
+                    <!-- <div class="tab-contents" id="tools">
                             <div class="tool-row">
                                 <div class="tool-item">
                                     <img src="images/excel.png" alt="MS Excel Icon">
@@ -159,15 +161,76 @@
                                     <img src="images/tableau.png" alt="Tableau Icon">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
+                </div>
+            </div>
+            <!-- <div class="toogle-about">
+                <button id="toggle-aboutme" onclick="toggleAboutMe()">See more</button>
+            </div>
+            </div> -->
+        </section>
+
+        <section>
+            <!-- Skills -->
+            <div class="skills">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-shopping-bag"></i>
+                        <p>eCommerce Data Analysis</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-broom"></i>
+                        <p>Data Cleaning & Validation</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <p>Data Querying & Automation</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-file-excel"></i>
+                        <p>Spreadsheet Reporting</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>Dashboard Development</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <p>Performance Monitoring</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Time Management</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tasks"></i>
+                        <p>Multitasking</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <p>Continuous Learning</p>
                     </div>
                 </div>
-                <div class="toogle-about">
-                    <button id="toggle-aboutme" onclick="toggleAboutMe()">See more</button>
+            </div>
+
+            <!-- Tools -->
+            <div class="tools">
+                <h2>Tools</h2>
+                <div class="tools-row" style="display:flex; gap:12px; align-items:center;">
+                    <i class="fas fa-file-excel" style="font-size:100px; color:#217346;"></i>
+                    <img src="https://cdn.simpleicons.org/GoogleSheets/34A853.svg" alt="Google Sheets" loading="lazy" />
+                    <img src="https://cdn.simpleicons.org/GoogleAnalytics/EA4335.svg" alt="Google Analytics" loading="lazy" />
+                    <img src="https://cdn.simpleicons.org/Shopify/7AB55C.svg" alt="Shopify" loading="lazy" />
+                    <span class="iconify" data-icon="simple-icons:amazon" data-height="100" style="color:#FF9900;"></span>
+                    <!-- <img src="https://cdn.simpleicons.org/MySQL/4479A1.svg" alt="SQL" loading="lazy" /> -->
+                    <img src="images/sql1.png" alt="Tableau" loading="lazy" />
+                    <!-- <img src="https://cdn.simpleicons.org/Looker/00B7E1.svg" alt="Looker Studio" loading="lazy" /> -->
+                    <img src="images/looker1.png" alt="Tableau" loading="lazy" />
+                    <img src="images/tableau.svg" alt="Tableau" loading="lazy" />
                 </div>
             </div>
         </section>
-
 
         <section id="services">
             <div class="services_me">
@@ -192,11 +255,19 @@
                             precise and ready for use. Your data is in good hands.</p>
                     </div>
                     <!-- Service 3: Scrape with Python -->
-                    <div class="service-item service-hidden">
+                    <!-- <div class="service-item service-hidden">
                         <h2>Scrape with Python</h2>
                         <p>I use Python to collect data from websites for research or analysis. I ensure the data is
                             clean and formatted for your needs. Whether it's for business insights or project support, I
                             help gather the right information efficiently.</p>
+                    </div> -->
+                    <!-- Service 3: Data Annotation -->
+                    <div class="service-item service-hidden">
+                        <h2>Data Annotation</h2>
+                        <p>I work on labeling and tagging data to make it accurate and ready for AI or research use.
+                            I ensure the information is well-organized, consistent, and easy to understand. With my
+                            attention to detail and experience in data handling,
+                            I help create high-quality datasets for projects or business needs.</p>
                     </div>
                     <!-- Service 4: Research Analyst -->
                     <div class="service-item service-hidden">
@@ -226,7 +297,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem vel ab dicta eaque hic vitae non aliquid, numquam quam. Aperiam perspiciatis maiores quas eos animi, natus similique saepe excepturi.</p>
             </div>
         </section> -->
-        
+
 
         <section id="projects">
             <div class="projects_me">
@@ -237,29 +308,38 @@
                 <div class="project-group">
                     <div class="project-item">
                         <div class="text-item">
-                            <h2>Sales Dashboard</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus vel amet, architecto alias eligendi nihil sit. Delectus cum incidunt doloribus esse nemo! Placeat cumque blanditiis porro. Laboriosam modi voluptatem at?</p>
-                            <p><a href="https://example.com/sales-dashboard" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                            <h2>Marketing Data Analysis Dashboard</h2>
+                            <p>This project showcases a Looker Studio dashboard created to analyze and visualize
+                                marketing performance data for accessibility-related search terms.
+                                It provides detailed insights into campaign costs, conversions, ROI, and keyword
+                                performance over time, enabling data-driven decisions for marketing optimization.</p>
+                            <p><a href="https://docs.google.com/document/d/1zwqPpsqfQzP9fItbAncg9Mg8eB9EtBNcFBRgYQ2T080/edit?usp=sharing"
+                                    target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
                         </div>
                         <div class="project-item-img">
-                            <a href="https://example.com/sales-dashboard" target="_blank">
-                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img1">
+                            <a href="https://docs.google.com/document/d/1zwqPpsqfQzP9fItbAncg9Mg8eB9EtBNcFBRgYQ2T080/edit?usp=sharing"
+                                target="_blank">
+                                <img src="images/Marketing_Data_Analysis.jpg" alt="img1">
                             </a>
                         </div>
                     </div>
                     <div class="project-item projects-hidden">
                         <div class="text-item">
                             <h2>AAA Gas Prices - Scraping</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio fuga voluptas quo sequi perferendis harum necessitatibus, consequuntur facere ipsa, eius sed magnam eligendi quisquam voluptate quibusdam, ad asperiores quam repellat.</p>
-                            <p><a href="https://example.com/scraping" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
+                            <p>A Python-based web scraping tool that collects daily gas price data from AAA, cleans and
+                                structures it for analysis, and presents trends to help users track fuel cost changes
+                                over time.</p>
+                            <p><a href="https://docs.google.com/document/d/1KQOIdPS39cHXZ4rOjUo6TGV4fI3D72AX1s_TYB6h_g4/edit?usp=sharing"
+                                    target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
                         </div>
                         <div class="project-item-img">
-                            <a href="https://example.com/scraping" target="_blank">
-                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img2">
+                            <a href="https://docs.google.com/document/d/1KQOIdPS39cHXZ4rOjUo6TGV4fI3D72AX1s_TYB6h_g4/edit?usp=sharing"
+                                target="_blank">
+                                <img src="images/AAA_Gas_Prices.jpg" alt="img2">
                             </a>
                         </div>
                     </div>
-                    <div class="project-item projects-hidden">
+                    <!-- <div class="project-item projects-hidden">
                         <div class="text-item">
                             <h2>Tableau Public</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolorem molestiae labore officiis rem commodi qui, veritatis numquam? Unde repellat aperiam aspernatur eius sint deserunt, doloribus architecto id repellendus dolores?</p>
@@ -282,7 +362,7 @@
                                 <img src="images/istockphoto-1180410208-612x612.jpg" alt="img4">
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="toogle-project">
                     <button id="toggle-projects" onclick="toggleProjects()">See more</button>

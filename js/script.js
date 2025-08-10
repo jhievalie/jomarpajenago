@@ -1,5 +1,5 @@
 // Span small-text
-const titles = ["Data Entry Specialist", "Data Analyst", "Reports Specialist", "Research Analyst"];
+const titles = ["Data Analyst", "Data Entry Specialist", "Reports Specialist", "Research Analyst", "Data Annotation"];
 let titleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
