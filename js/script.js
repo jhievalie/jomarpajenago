@@ -1,5 +1,5 @@
 // Span small-text
-const titles = ["Data Analyst", "Data Entry Specialist", "Reports Specialist", "Research Analyst", "Data Annotation"];
+const titles = ["Data Analyst", "Data Entry Specialist", "Reporting Specialist", "Research Analyst", "Data Annotation"];
 let titleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -359,3 +359,4 @@ form.addEventListener('submit', e => {
             console.error('Error!', error.message);
         });
 });
+
