@@ -1075,7 +1075,7 @@ footer {
     /* padding: 10rem 20vh 20rem;
   } */
 
-  /* .hero .image img {
+  .hero .image img {
     max-width: 80%;
     height: 80%;
     margin-top: 10%;
@@ -1096,7 +1096,7 @@ footer {
 
   .hero .text p {
     font-size: 1rem;
-  } */
+  }
 
 
   #about {
@@ -1893,6 +1893,7 @@ footer {
   }
 
 }
+
 
 
 
