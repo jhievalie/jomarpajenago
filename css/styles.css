@@ -942,7 +942,7 @@ footer {
 
 
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+@media screen and (max-width: 1440px) {
   .hero {
     height: 600px;
   }
@@ -959,7 +959,7 @@ footer {
 
 
 /* For smaller screen sizes */
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1200px) {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
@@ -1377,7 +1377,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 /* @media screen and (max-width: 860px) { */
   .logo {
     font-size: 1rem;
@@ -1893,6 +1893,7 @@ footer {
   }
 
 }
+
 
 
 
