@@ -1070,7 +1070,7 @@ footer {
     flex-direction: column;
 
     height: auto;
-    /* margin: 0; */
+    margin: 1rem;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     padding: 10rem 20vh 20rem;
   }
@@ -1893,6 +1893,7 @@ footer {
   }
 
 }
+
 
 
 
