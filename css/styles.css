@@ -1066,14 +1066,14 @@ footer {
     height: auto;
   }
 
-  /* .hero {
+  .hero {
     flex-direction: column;
 
     height: auto;
-    margin: 1rem; */
+    margin: 1rem;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
-    /* padding: 10rem 20vh 20rem;
-  } */
+    padding: 2rem 2vh 2rem;
+  }
 
   .hero .image img {
     max-width: 80%;
@@ -1893,6 +1893,7 @@ footer {
   }
 
 }
+
 
 
 
