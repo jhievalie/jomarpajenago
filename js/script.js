@@ -361,3 +361,19 @@ form.addEventListener('submit', e => {
 });
 
 
+  function matchFooterHeight() {
+    const projectSection = document.querySelector('.project');
+    const footer = document.querySelector('footer');
+
+    if (projectSection && footer) {
+      // Only apply on screens wider than 768px (you can adjust)
+      if (window.innerWidth > 768) {
+        footer.style.height = projectSection.offsetHeight + 'px';
+      } else {
+        footer.style.height = 'auto'; // Reset on mobile
+      }
+    }
+  }
+
+  window.addEventListener('load', matchFooterHeight);
+  window.addEventListener('resize', matchFooterHeight);
