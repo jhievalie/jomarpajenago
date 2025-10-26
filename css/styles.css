@@ -826,6 +826,7 @@ footer {
   color: #fff;
   padding: 5rem 5% 1rem;
   font-size: 1rem;
+  height: auto;
   /* margin-bottom: -2rem; */
 }
 
@@ -1896,6 +1897,7 @@ footer {
   }
 
 }
+
 
 
 
