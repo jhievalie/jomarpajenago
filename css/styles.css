@@ -1718,7 +1718,7 @@ footer {
 
   /* Projects Section */
   .projects_me {
-    margin-top: 30%;
+    margin-top: 40%;
     flex-direction: column;
     height: auto;
     padding: 2rem 0;
@@ -1896,6 +1896,7 @@ footer {
   }
 
 }
+
 
 
 
