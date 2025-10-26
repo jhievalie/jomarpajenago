@@ -592,7 +592,7 @@ h2 {
 /* Projects Section */
 .projects_me {
   padding: 4rem 10%;
-  margin: 0 5% 5%;
+  margin: 0 10% 5%;
   border-radius: 15px;
   background-color: var(--background-color2);
   position: relative;
@@ -1895,6 +1895,7 @@ footer {
   }
 
 }
+
 
 
 
