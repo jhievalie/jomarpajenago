@@ -633,7 +633,7 @@ h2 {
   align-items: center;
   flex-direction: column;
   /* Stack image, h2, p vertically on mobile */
-  gap: 2rem;
+  gap: 5rem;
 }
 
 /* Alternating Image Placement */
@@ -1895,6 +1895,7 @@ footer {
   }
 
 }
+
 
 
 
