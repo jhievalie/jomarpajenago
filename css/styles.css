@@ -1720,7 +1720,7 @@ footer {
     margin-top: 30%;
     flex-direction: column;
     height: auto;
-    padding: 2rem 5%;
+    padding: 2rem 0;
   }
 
   .projects_me .image {
@@ -1895,6 +1895,7 @@ footer {
   }
 
 }
+
 
 
 
