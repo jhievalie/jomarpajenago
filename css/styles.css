@@ -454,10 +454,12 @@ h2 {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 60px;
   width: 100%;
-  max-width: 1000px;
+  max-width: 1400px;
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .service-item {
@@ -1893,6 +1895,7 @@ footer {
   }
 
 }
+
 
 
 
