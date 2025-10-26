@@ -1813,7 +1813,7 @@ footer {
 
   /* Footer */
   footer {
-    margin: 0;
+    margin: -2rem 0 0;
     padding: 1rem;
     height: 100vh;
   }
@@ -1896,6 +1896,7 @@ footer {
   }
 
 }
+
 
 
 
