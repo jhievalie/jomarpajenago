@@ -1482,7 +1482,7 @@ footer {
   }
 
   section {
-    margin-top: 15%;
+    margin-top: 12%;
     margin-bottom: 10px;
   }
 
@@ -1717,7 +1717,7 @@ footer {
 
   /* Projects Section */
   .projects_me {
-    margin-top: 20%;
+    margin-top: 30%;
     flex-direction: column;
     height: auto;
     padding: 2rem 5%;
@@ -1895,6 +1895,7 @@ footer {
   }
 
 }
+
 
 
 
