@@ -218,7 +218,7 @@ nav {
 
 .hero .text .btn-download {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 12px 24px;
   font-size: 1.2rem;
   color: #fff;
@@ -1897,6 +1897,7 @@ footer {
   }
 
 }
+
 
 
 
