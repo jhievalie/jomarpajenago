@@ -1,495 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jomar Pajenago</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jomar | Data Analyst</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@100;300;400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="#home" class="logo">
-                <i class="fas fa-briefcase"></i> Jomar P.
-                <span class="small-text" id="subtitle"></span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contacts">Contacts</a></li>
-            </ul>
-            <div class="burger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
-    </header>
 
-    <main>
-        <section id="home">
-            <div class="hero">
-                <div class="text">
-                    <!-- <h1>I analyze data <br />to drive insights <br />and decisions</h1> -->
-                    <h1>Hello, Meet Jomar</h1>
-                    <p style="margin-top:-1rem;">
-                    <!-- <p style="margin-top:0.5rem; font-size:2.21rem; color:#FFF;"> -->
-                        Your Next Data Specialist
-                    </p>
-                    <!-- <p>
-                        Hi! I'm from the Philippines, and I have a passion
-                        for managing data efficiently and delivering accurate results.
-                    </p> -->
-                    <p>
-                    <!-- <p style="margin-top:1rem; font-size:1.2rem; color:#ffffff;"> -->
-                        <!-- IBM Certified in Data Analysis Using Python, <br />Python for Data Science, <br />and Data Science Foundations – Level 1 <br /> -->
-                        I handle data entry, cleaning, and validation; <br />ensuring accuracy, consistency, <br />and insightful reports.
-                    <p style="font-size:1rem; color:#1261FE;">
-                    <!-- <p style="margin-top:1rem; font-size:1rem; color:#1261FE;"> -->
-                        IBM Certified in Data Analysis Using Python, Python for Data Science, and Data Science Foundations – Level 1 <br />
-                    </p>
-                    </p>
-                    <a href="file/Hi, I'm Jomar.pdf" download class="btn-download">Download CV</a>
-                    <p style="margin-top:1rem; font-size:1rem; color:#00aced;">
-                        Currently Seeking Data Analyst Opportunities
-                    </p>
-                </div>
-                <div class="image">
-                    <img src="images/JomarP.png" alt="Jomar">
-                </div>
-            </div>
-        </section>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <h2 class="logo">Jomar</h2>
+  
+      <!-- Desktop nav -->
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+  
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        ☰
+      </button>
+    </div>
+  </header>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="close-btn" id="closeNav">✕</button>
+  
+    <nav class="mobile-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  
 
+  <!-- HOME -->
+  <section id="home" class="home section-animate">
+    <div class="container home-content">
+      <h1>Data Analyst</h1>
 
-        <!-- <section id="about">
-            <div class="about_me">
-                <div class="image"></div>
-                <div class="text">
-                    <h1>About Me</h1>
-                    <p>I’m a detail-oriented data analyst and administrative assistant with a strong background in data entry, management, and automation. With years of experience working remotely, I’ve honed my skills in Excel, Google Sheets, and other related tools, making me highly efficient in handling large datasets and streamlining workflows. My expertise lies in improving operational processes by leveraging data-driven insights and optimizing tasks through automation.<br><br>
-                        I’m passionate about finding creative solutions to complex problems, and I thrive in dynamic, fast-paced environments. My goal is to consistently deliver accurate, insightful reports and help businesses make informed decisions. Currently, I work flexible night shifts, balancing multiple projects while ensuring a smooth and productive workday for clients.</p>
-                </div>
-            </div>
-        </section> -->
-        <section id="about">
-            <div class="container">
-                <div class="about_me text">
-                    <!-- Left Side: About Me Content -->
-                    <div class="about_me_tab">
-                        <h2>About Me</h2>
-                        <p>
-                            <!-- I’m a reliable and detail-oriented data professional with strong experience in data entry, migration, and
-                            record management. Over the years, I’ve supported both government offices and private clients in organizing,
-                            validating, and transferring large datasets with accuracy and efficiency. -->
-                            I’m a reliable and detail-oriented data professional certified by IBM. I help teams clean, analyze, 
-                            and visualize data for informed decision-making. I enjoy building dashboards, ensuring data consistency, 
-                            and supporting process improvement through automation and structured reporting.
-                            <br><br>
-                            I’m skilled in tools like Excel, Google Sheets, and basic SQL, and I also have experience building dashboards
-                            and reports using platforms such as Looker Studio and Tableau. My work often involves cleaning data, preparing
-                            clear reports, and helping teams make informed decisions through well-structured information.
-                            <br><br>
-                            I enjoy working with data to improve systems, solve problems, and make processes more efficient. I value
-                            accuracy, reliability, and continuous learning, and I’m always eager to take on tasks that challenge me to grow
-                            both technically and professionally.
-                        </p>
-                    </div>
+      <p class="home-subtitle">
+        Data Entry Specialist · ETL · Automation · E-Commerce
+      </p>
 
+      <p class="home-description">
+        I work with structured and unstructured data—cleaning, validating,
+        and automating workflows to turn messy inputs into reliable,
+        decision-ready datasets.
+      </p>
 
-                    <!-- Right Side: Tab Links and Content -->
-                    <!-- <div class="tab-container about-hidden">
-                        <div class="tab-titles">
-                            <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
-                            <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
-                            <p class="tab-links" onclick="opentab(event, 'tools')">Tools</p>
-                        </div>
+      <div class="home-actions">
+        <a href="#" class="btn primary">Work With Me</a>
+        <a href="Pajenago_Data_Analyst.pdf" class="btn secondary" download>
+          Download CV
+        </a>
+      </div>
+    </div>
+  </section>
 
-                        <div class="tab-contents active-tab" id="skills">
-                            <p>
-                                <span>Google Sheets & MS Excel:<br></span> Data Analysis, Entry, Validation, and
-                                Normalization <br><br>
-                                <span>SQL:<br></span> Experience in creating queries and managing databases <br><br>
-                                <span>Shopify & Looker Studio:<br></span> Proficient in e-Commerce platforms and data
-                                visualization <br><br>
-                                <span>Google Analytics & Ads Managers:<br></span> Analyzing web traffic and optimizing
-                                online ads <br><br>
-                                <span>Amazon & Tableau:<br></span> Building reports and dashboards for business
-                                insights
-                            </p>
-                        </div>
+<!-- ABOUT -->
+<section id="about" class="about section-animate">
+  <div class="container about-grid">
 
-                        <div class="tab-contents" id="experience">
-                            <p>
-                                <span>Freelance Data Analyst:<br></span> Automated data analysis tasks, improved
-                                accuracy,
-                                and developed performance dashboards. <br><br>
-                                <span>Administrative Assistant:<br></span> Developed reports, trained new employees, and
-                                improved administrative processes for the City Government of Antipolo. <br><br>
-                                <span>Revenue Collection Clerk:<br></span> Handled cash transactions and provided
-                                customer
-                                support for the City Government of Antipolo.
-                            </p>
-                        </div> -->
+    <!-- PHOTO -->
+    <div class="about-photo">
+      <img src="chibi.png" alt="Jomar illustration">
+    </div>
 
-                    <!-- <div class="tab-contents" id="tools">
-                            <div class="tool-row">
-                                <div class="tool-item">
-                                    <img src="images/excel.png" alt="MS Excel Icon">
-                                </div>
-                                <div class="tool-item">
-                                    <img src="images/google-sheets.png" alt="Google Sheets Icon">
-                                </div>
-                                <div class="tool-item">
-                                    <img src="images/google-analytics.png" alt="Google Analytics Icon">
-                                </div>
-                            </div>
-                            <div class="tool-row">
-                                <div class="tool-item">
-                                    <img src="images/shopify.png" alt="Shopify Icon">
-                                </div>
-                                <div class="tool-item">
-                                    <img src="images/amazon.png" alt="Amazon Icon">
-                                </div>
-                                <div class="tool-item">
-                                    <img src="images/sql.png" alt="SQL Icon">
-                                </div>
-                            </div>
-                            <div class="tool-row">
-                                <div class="tool-item">
-                                    <img src="images/looker.png" alt="Looker Studio Icon">
-                                </div>
-                                <div class="tool-item">
-                                    <img src="images/tableau.png" alt="Tableau Icon">
-                                </div>
-                            </div>
-                        </div> -->
-                </div>
-            </div>
-            <!-- <div class="toogle-about">
-                <button id="toggle-aboutme" onclick="toggleAboutMe()">See more</button>
-            </div>
-            </div> -->
-        </section>
+    <!-- TEXT -->
+    <div class="about-text">
+      <h2>About Me</h2>
 
-        <section>
-            <!-- Skills -->
-            <div class="skills">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fas fa-shopping-bag"></i>
-                        <p>eCommerce Data Analysis</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-broom"></i>
-                        <p>Data Cleaning & Validation</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-code"></i>
-                        <p>Data Querying & Automation</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-file-excel"></i>
-                        <p>Spreadsheet Reporting</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-chart-bar"></i>
-                        <p>Dashboard Development</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-tachometer-alt"></i>
-                        <p>Performance Monitoring</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Time Management</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-tasks"></i>
-                        <p>Multitasking</p>
-                    </div>
-                    <div class="skill-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <p>Continuous Learning</p>
-                    </div>
-                </div>
-            </div>
+      <p>
+        I’m a <strong>Data Analyst</strong> specializing in data cleaning, automation,
+        and structured reporting—helping businesses turn messy data into reliable,
+        usable information.
+      </p>
 
-            <!-- Tools -->
-            <div class="tools">
-                <h2>Tools</h2>
-                <div class="tools-row" style="display:flex; gap:12px; align-items:center;">
-                    <i class="fas fa-file-excel" style="font-size:100px; color:#217346;"></i>
-                    <img src="https://cdn.simpleicons.org/GoogleSheets/34A853.svg" alt="Google Sheets" loading="lazy" />
-                    <img src="https://cdn.simpleicons.org/GoogleAnalytics/EA4335.svg" alt="Google Analytics" loading="lazy" />
-                    <img src="https://cdn.simpleicons.org/Shopify/7AB55C.svg" alt="Shopify" loading="lazy" />
-                    <span class="iconify" data-icon="simple-icons:amazon" data-height="100" style="color:#FF9900;"></span>
-                    <!-- <img src="https://cdn.simpleicons.org/MySQL/4479A1.svg" alt="SQL" loading="lazy" /> -->
-                    <img src="images/sql1.png" alt="SQL" loading="lazy" />
-                    <!-- <img src="https://cdn.simpleicons.org/Looker/00B7E1.svg" alt="Looker Studio" loading="lazy" /> -->
-                    <img src="images/looker1.png" alt="Looker Studio" loading="lazy" />
-                    <img src="images/tableau.svg" alt="Tableau" loading="lazy" />
-                    <img src="images/powerbi.png" alt="Power BI" loading="lazy" />
-                </div>
-            </div>
-        </section>
+      <p>
+        I work with <strong>Excel, Google Sheets, CSV files, and e-commerce data feeds</strong>,
+        building automated workflows that reduce manual work and improve accuracy.
+        In previous projects, I’ve <strong>reduced data preparation time by up to 40%</strong>
+        by standardizing inconsistent datasets and automating repetitive tasks.
+      </p>
 
-        <section id="services">
-            <div class="services_me">
-                <div class="text">
-                    <h1>Services</h1>
-                    <p>Details about my work and skills as a remote freelancer.</p>
-                </div>
-                <!-- Grid section -->
-                <div class="services-grid">
-                    <!-- Service 1: Data Analyst -->
-                    <div class="service-item">
-                        <h2>Data Analyst</h2>
-                        <p>I help businesses understand their data through clear and insightful reports. Using tools
-                            like MS Excel, Google Sheets, and Tableau, I turn raw data into actionable insights. Whether
-                            it's creating dashboards or analyzing trends, I ensure your data works for you.</p>
-                    </div>
-                    <!-- Service 2: Data Entry Specialist -->
-                    <div class="service-item service-hidden">
-                        <h2>Data Entry Specialist</h2>
-                        <p>I specialize in organizing and maintaining accurate data records. With attention to detail, I
-                            handle data entry tasks using tools like Excel and Google Sheets, ensuring everything is
-                            precise and ready for use. Your data is in good hands.</p>
-                    </div>
-                    <!-- Service 3: Scrape with Python -->
-                    <!-- <div class="service-item service-hidden">
-                        <h2>Scrape with Python</h2>
-                        <p>I use Python to collect data from websites for research or analysis. I ensure the data is
-                            clean and formatted for your needs. Whether it's for business insights or project support, I
-                            help gather the right information efficiently.</p>
-                    </div> -->
-                    <!-- Service 3: Data Annotation -->
-                    <div class="service-item service-hidden">
-                        <h2>Data Annotation</h2>
-                        <p>I work on labeling and tagging data to make it accurate and ready for AI or research use.
-                            I ensure the information is well-organized, consistent, and easy to understand. With my
-                            attention to detail and experience in data handling,
-                            I help create high-quality datasets for projects or business needs.</p>
-                    </div>
-                    <!-- Service 4: Research Analyst -->
-                    <div class="service-item service-hidden">
-                        <h2>Research Analyst</h2>
-                        <p>I use data tools to gather and analyze information, ensuring accuracy and relevance.
-                            Whether for market research, trend analysis, or decision-making, I provide insights to
-                            support your goals efficiently.</p>
-                    </div>
-                    <!-- Service 5: Data Migration Specialist -->
-                    <div class="service-item service-hidden">
-                        <h2>Data Migration</h2>
-                        <p>
-                            I specialize in organizing, transferring, and validating data from different sources to ensure clean and accurate
-                            records. I handle large datasets with care, making sure information is properly structured and ready for use in
-                            new systems or reporting platforms.
-                        </p>
-                    </div>
-                    
-                    <!-- Service 6: Dashboard & Reporting -->
-                    <div class="service-item service-hidden">
-                        <h2>Dashboard & Reporting</h2>
-                        <p>
-                            I build clear and effective dashboards using tools like Excel, Google Sheets, Looker Studio, and Tableau. I turn
-                            raw data into visual reports that make trends and performance easy to understand, helping teams make informed
-                            decisions.
-                        </p>
-                    </div>
+      <p>
+        Clients rely on me to handle large volumes of product, vendor, and operational
+        data—ensuring everything is clean, validated, and ready for reporting,
+        dashboards, or system uploads.
+      </p>
 
-                </div>
-                <div class="toogle-service">
-                    <button id="toggle-services" onclick="toggleServices()">See more</button>
-                </div>
-            </div>
-        </section>
+      <!-- WHAT I CAN HELP YOU WITH -->
+      <h3 class="about-subtitle">What I Can Help You With</h3>
+      <ul class="about-list">
+        <li>Cleaning and normalizing large datasets (Excel, Google Sheets, CSV)</li>
+        <li>Automating repetitive data tasks to reduce manual effort</li>
+        <li>Validating and reconciling product and vendor data</li>
+        <li>Preparing clean datasets for dashboards and reports</li>
+        <li>Structuring e-commerce and operational data for analysis</li>
+      </ul>
 
-        <!-- <section id="cardy">
-            <div class="card">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem vel ab dicta eaque hic vitae non aliquid, numquam quam. Aperiam perspiciatis maiores quas eos animi, natus similique saepe excepturi.</p>
-            </div>
-            <div class="card">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem vel ab dicta eaque hic vitae non aliquid, numquam quam. Aperiam perspiciatis maiores quas eos animi, natus similique saepe excepturi.</p>
-            </div>
-            <div class="card">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem vel ab dicta eaque hic vitae non aliquid, numquam quam. Aperiam perspiciatis maiores quas eos animi, natus similique saepe excepturi.</p>
-            </div>
-            <div class="card">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint autem vel ab dicta eaque hic vitae non aliquid, numquam quam. Aperiam perspiciatis maiores quas eos animi, natus similique saepe excepturi.</p>
-            </div>
-        </section> -->
+      <!-- WHY WORK WITH ME -->
+      <h3 class="about-subtitle">Why Work With Me</h3>
+      <ul class="about-list">
+        <li>Proven reduction in manual data processing time (up to 40%)</li>
+        <li>Strong attention to detail and data accuracy</li>
+        <li>Experience working with both freelance clients and structured organizations</li>
+        <li>Clear documentation and maintainable workflows</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
 
 
-        <section id="projects">
-            <div class="projects_me">
-                <div class="text">
-                    <h1>Projects</h1>
-                    <p>Details about my projects.</p>
-                </div>
-                <div class="project-group">
-                    <div class="project-item">
-                        <div class="text-item">
-                            <h2>Marketing Data Analysis Dashboard</h2>
-                            <p>This project showcases a Looker Studio dashboard created to analyze and visualize
-                                marketing performance data for accessibility-related search terms.
-                                It provides detailed insights into campaign costs, conversions, ROI, and keyword
-                                performance over time, enabling data-driven decisions for marketing optimization.</p>
-                            <p><a href="https://docs.google.com/document/d/1zwqPpsqfQzP9fItbAncg9Mg8eB9EtBNcFBRgYQ2T080/edit?usp=sharing"
-                                    target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
-                        </div>
-                        <div class="project-item-img">
-                            <a href="https://docs.google.com/document/d/1zwqPpsqfQzP9fItbAncg9Mg8eB9EtBNcFBRgYQ2T080/edit?usp=sharing"
-                                target="_blank">
-                                <img src="images/Marketing_Data_Analysis.jpg" alt="img1">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-item projects-hidden">
-                        <div class="text-item">
-                            <h2>AAA Gas Prices - Scraping</h2>
-                            <p>A Python-based web scraping tool that collects daily gas price data from AAA, cleans and
-                                structures it for analysis, and presents trends to help users track fuel cost changes
-                                over time.</p>
-                            <p><a href="https://docs.google.com/document/d/1KQOIdPS39cHXZ4rOjUo6TGV4fI3D72AX1s_TYB6h_g4/edit?usp=sharing"
-                                    target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
-                        </div>
-                        <div class="project-item-img">
-                            <a href="https://docs.google.com/document/d/1KQOIdPS39cHXZ4rOjUo6TGV4fI3D72AX1s_TYB6h_g4/edit?usp=sharing"
-                                target="_blank">
-                                <img src="images/AAA_Gas_Prices.jpg" alt="img2">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-item projects-hidden">
-                        <div class="text-item">
-                            <h2>Case Allocation Dashboard</h2>
-                            <p>The Case Allocation Dashboard provides a clear view of case distribution, workload, and performance for attorneys and paralegals. 
-                                Built in Power BI with DAX calculations, it tracks referrals, pre-litigation, litigation, and support hours to ensure balanced workload, 
-                                optimized resources, and data-driven decision-making in legal operations.</p>
-                            <p><a href="https://docs.google.com/document/d/1Uqxy5C-1-K58tVSEqbjzIUjPEYWqbqpkZw3BfD1qypU/edit?usp=sharing"
-                                    target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
-                        </div>
-                        <div class="project-item-img">
-                            <a href="https://docs.google.com/document/d/1Uqxy5C-1-K58tVSEqbjzIUjPEYWqbqpkZw3BfD1qypU/edit?usp=sharing"
-                                target="_blank">
-                                <img src="images/Case_Allocation.jpg" alt="img3">
-                            </a>
-                        </div>
-                    </div>
-                    <!-- <div class="project-item projects-hidden">
-                        <div class="text-item">
-                            <h2>Philippine Statistics</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et atque eos saepe aliquam quisquam adipisci, suscipit quibusdam tenetur, nesciunt reprehenderit alias, sequi voluptatem dicta eligendi fugiat accusantium commodi enim! Iusto?</p>
-                            <p><a href="https://example.com/ph-statistics" target="_blank">Learn more <i class="fas fa-arrow-right"></i></a></p>
-                        </div>
-                        <div class="project-item-img">
-                            <a href="https://example.com/ph-statistics" target="_blank">
-                                <img src="images/istockphoto-1180410208-612x612.jpg" alt="img4">
-                            </a>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="toogle-project">
-                    <button id="toggle-projects" onclick="toggleProjects()">See more</button>
-                </div>
-            </div>
-        </section>
-    </main>
+<!-- SERVICES -->
+<section id="services" class="services section-animate">
+  <div class="container">
 
+    <div class="services-header">
+      <h2>Services</h2>
+      <p>
+        Practical data services designed to improve accuracy, efficiency,
+        and decision-making.
+      </p>
+    </div>
 
-    <footer>
-        <!-- Footer Content -->
-        <div class="footer-content">
-            <!-- Left Section - Contacts and Social Icons -->
-            <div id="contacts" class="footer-left">
-                <h2>Contacts</h2>
-                <p><i class="fas fa-paper-plane"></i>jomarpajenago@gmail.com</p>
-                <p><i class="fas fa-phone-square-alt"></i>+639567092024</p>
+    <div class="services-grid">
 
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/jomarp21" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <!-- <a href="https://www.twitter.com/vampot" target="_blank"><i class="fab fa-twitter"></i></a> -->
-                    <!-- <a href="https://www.instagram.com/jhiepajenago/" target="_blank"><i
-                            class="fab fa-instagram"></i></a> -->
-                    <a href="https://www.linkedin.com/in/jomarpajenago21" target="_blank"><i
-                            class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
+      <div class="service-card">
+        <h3>Data Cleaning & Preparation</h3>
+        <p>
+          Cleaning, normalizing, and validating datasets to ensure accuracy
+          and consistency across systems.
+        </p>
+      </div>
 
-            <!-- Right Section - Contact Me -->
-            <div class="footer-right">
-                <form name="submit-to-google-sheet">
-                    <h3>Send me a message</h3>
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <input type="text" name="Subject" placeholder="Subject" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
+      <div class="service-card">
+        <h3>ETL & Automation</h3>
+        <p>
+          Building automated workflows to reduce manual data processing
+          and streamline recurring tasks.
+        </p>
+      </div>
 
+      <div class="service-card">
+        <h3>Data Entry & Management</h3>
+        <p>
+          Accurate handling of large datasets using Excel and Google Sheets,
+          with strong attention to detail.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Web Scraping</h3>
+        <p>
+          Collecting and structuring data from websites using Python for
+          reporting and analysis.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Reporting & Dashboards</h3>
+        <p>
+          Preparing clean datasets and dashboards for clear insights
+          and performance monitoring.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <h3>Data Validation & QA</h3>
+        <p>
+          Ensuring data accuracy through systematic checks, reconciliation,
+          and documentation.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="experience section-animate">
+  <div class="container">
+
+    <div class="experience-header">
+      <h2>Professional Experience</h2>
+      <p>A timeline of roles where I handled real-world data, operations, and analytics.</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item is-current">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Aug 2025 – Present</div>
+        <div class="timeline-content">
+          <h3>BI Developer</h3>
+          <span>Law Firm</span>
+          <p>
+            Designed and delivered data-driven solutions, building Power BI and Looker dashboards
+            for firm-wide trends, KPIs, payroll, and social media insights using BigQuery data.
+          </p>
         </div>
+      </div>
 
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-            <p>&copy; 2025. All rights reserved.</p>
+      <div class="timeline-item is-recent">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Jan 2025 – Oct 2025</div>
+        <div class="timeline-content">
+          <h3>Data Analyst</h3>
+          <span>E-Commerce Company</span>
+          <p>
+            Cleaned, normalized, and automated product, vendor, and marketing datasets,
+            producing dashboards and reports for performance and operational decision-making.
+          </p>
         </div>
-    </footer>
+      </div>
 
-    <script src="js/script.js"></script>
+      <div class="timeline-item is-recent">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Mar 2025 – Dec 2025</div>
+        <div class="timeline-content">
+          <h3>Data Analyst (E-Commerce & Marketing Analytics)</h3>
+          <span>IT / Marketing Analytics</span>
+          <p>
+            Automated reporting with JavaScript and Python, built KPI dashboards
+            (CVR, ROAS, AOV, revenue), and delivered recurring performance reports.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item is-mid">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">May 2025 – Jun 2025</div>
+        <div class="timeline-content">
+          <h3>BI Developer (Cloud & Enterprise BI)</h3>
+          <span>Enterprise Analytics</span>
+          <p>
+            Built Tableau dashboards and queried large datasets using SQL in Azure Databricks,
+            optimizing reporting pipelines and KPI delivery.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item is-mid">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Apr 2024 – Jul 2025</div>
+        <div class="timeline-content">
+          <h3>Data Analyst (Financial Data & Research)</h3>
+          <span>Fintech</span>
+          <p>
+            Structured and validated financial datasets using Python and SQL,
+            supporting analytics, modeling, and AI training workflows.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item is-old">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Apr 2024 – Nov 2024</div>
+        <div class="timeline-content">
+          <h3>Data Analyst (Customer & Operations Analytics)</h3>
+          <span>IT Company</span>
+          <p>
+            Built dashboards for sales, churn, and customer satisfaction,
+            supporting operational and retention decisions.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item is-old">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Nov 2020 – Aug 2024</div>
+        <div class="timeline-content">
+          <h3>Administrative Assistant</h3>
+          <span>Government</span>
+          <p>
+            Prepared operational reports, supported onboarding,
+            and improved administrative and data workflows.
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item is-old">
+        <div class="timeline-marker"></div>
+        <div class="timeline-date">Sep 2018 – Nov 2020</div>
+        <div class="timeline-content">
+          <h3>Revenue Collection Clerk</h3>
+          <span>Government</span>
+          <p>
+            Processed payments, maintained revenue records,
+            and handled reconciliation and reporting under strict compliance.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact section-animate">
+  <div class="container contact-inner">
+
+    <div class="contact-text">
+      <h2>Let’s Work Together</h2>
+      <p class="contact-intro">
+        If you’re looking for reliable support in data analysis, automation,
+        or reporting, I’d be happy to help.
+      </p>
+
+      <p class="contact-sub">
+        Whether you’re a business owner, team lead, or hiring manager,
+        feel free to reach out for a quick discussion.
+      </p>
+    </div>
+
+    <div class="contact-actions">
+      <a href="mailto:jomarpajenago@gmail.com" class="btn contact-btn">
+        Start a conversation
+      </a>
+
+      <a href="Pajenago_Data_Analyst.pdf" class="btn contact-btn" download>
+        Download CV
+      </a>
+    </div>
+
+    <div class="contact-footer">
+      <span>Based in the Philippines · Available for remote work</span>
+    </div>
+
+  </div>
+</section>
+
+
+<script src="script.js"></script>
 </body>
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
