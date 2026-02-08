@@ -465,6 +465,27 @@ body {
   margin-top: 40px;
   font-size: 13px;
   color: #9fb0d8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.contact-footer .dot {
+  opacity: 0.6;
+}
+
+.contact-footer .contact-link {
+  color: #dbe3f1;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.contact-footer .contact-link:hover {
+  color: #ffffff;
+  border-bottom-color: rgba(255,255,255,0.6);
 }
 
 .contact-btn {
