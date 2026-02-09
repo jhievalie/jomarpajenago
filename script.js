@@ -21,7 +21,7 @@ document.querySelectorAll(".mobile-links a").forEach(link => {
 
 
 /* =========================
-   SECTION REVEAL OBSERVER
+   SECTION REVEAL (HOME / ABOUT / SERVICES / CONTACT)
 ========================= */
 const animatedSections = document.querySelectorAll(".section-animate");
 
@@ -34,18 +34,15 @@ const sectionObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.2,
-    rootMargin: "0px 0px -10% 0px"
+    threshold: 0.2
   }
 );
 
-animatedSections.forEach(section =>
-  sectionObserver.observe(section)
-);
+animatedSections.forEach(section => sectionObserver.observe(section));
 
 
 /* =========================
-   TIMELINE OBSERVER
+   TIMELINE REVEAL (EXPERIENCE)
 ========================= */
 const timelineItems = document.querySelectorAll(".timeline-item");
 
@@ -54,7 +51,7 @@ const timelineObserver = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-visible");
-        timelineObserver.unobserve(entry.target); // animate once
+        timelineObserver.unobserve(entry.target);
       }
     });
   },
@@ -64,49 +61,51 @@ const timelineObserver = new IntersectionObserver(
   }
 );
 
-timelineItems.forEach(item =>
-  timelineObserver.observe(item)
-);
+timelineItems.forEach(item => timelineObserver.observe(item));
 
 
 /* =========================
-   FORCE RECHECK (KEY FIX)
+   MOBILE FIX: FORCE CHECK AFTER ANCHOR JUMP
 ========================= */
-function forceObserverRefresh() {
-  // SECTION RECHECK
-  animatedSections.forEach(section => {
-    sectionObserver.unobserve(section);
-    sectionObserver.observe(section);
-  });
+function forceTimelineVisibility() {
+  const viewportHeight = window.innerHeight;
 
-  // TIMELINE RECHECK
   timelineItems.forEach(item => {
-    if (!item.classList.contains("is-visible")) {
+    if (item.classList.contains("is-visible")) return;
+
+    const rect = item.getBoundingClientRect();
+
+    if (rect.top < viewportHeight * 0.85) {
+      item.classList.add("is-visible");
       timelineObserver.unobserve(item);
-      timelineObserver.observe(item);
     }
   });
 }
 
 
 /* =========================
-   FIX ANCHOR NAV ON MOBILE
+   RUN FIX AFTER NAVIGATION
 ========================= */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", () => {
-    // Let browser finish anchor jump
-    requestAnimationFrame(() => {
-      setTimeout(forceObserverRefresh, 300);
-    });
+    setTimeout(forceTimelineVisibility, 350);
   });
 });
 
 
 /* =========================
-   RESIZE SAFETY (ROTATION)
+   RUN ON LOAD (MOBILE SAFETY NET)
+========================= */
+window.addEventListener("load", () => {
+  setTimeout(forceTimelineVisibility, 400);
+});
+
+
+/* =========================
+   RUN ON RESIZE (URL BAR COLLAPSE)
 ========================= */
 let resizeTimer;
 window.addEventListener("resize", () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(forceObserverRefresh, 300);
+  resizeTimer = setTimeout(forceTimelineVisibility, 250);
 });
