@@ -111,3 +111,28 @@ window.addEventListener("resize", () => {
     );
   }, 300);
 });
+
+
+// Clean hash from URL after navigation
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener("click", e => {
+    const targetId = link.getAttribute("href");
+
+    if (targetId.length > 1) {
+      const targetEl = document.querySelector(targetId);
+
+      if (targetEl) {
+        e.preventDefault();
+
+        // Smooth scroll
+        targetEl.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        // Remove hash from URL (important part)
+        history.replaceState(null, "", window.location.pathname);
+      }
+    }
+  });
+});
