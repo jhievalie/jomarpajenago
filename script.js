@@ -21,7 +21,7 @@ document.querySelectorAll(".mobile-links a").forEach(link => {
 
 
 /* =========================
-   SECTION REVEAL (HOME / ABOUT / SERVICES / CONTACT)
+   SECTION ANIMATION
 ========================= */
 const animatedSections = document.querySelectorAll(".section-animate");
 
@@ -42,7 +42,7 @@ animatedSections.forEach(section => sectionObserver.observe(section));
 
 
 /* =========================
-   TIMELINE REVEAL (EXPERIENCE)
+   TIMELINE ANIMATION
 ========================= */
 const timelineItems = document.querySelectorAll(".timeline-item");
 
@@ -56,8 +56,7 @@ const timelineObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.1,
-    rootMargin: "0px 0px -20% 0px"
+    threshold: 0.15
   }
 );
 
@@ -65,47 +64,50 @@ timelineItems.forEach(item => timelineObserver.observe(item));
 
 
 /* =========================
-   MOBILE FIX: FORCE CHECK AFTER ANCHOR JUMP
+   MOBILE ANCHOR FIX
+   (THIS IS THE KEY PART)
 ========================= */
-function forceTimelineVisibility() {
-  const viewportHeight = window.innerHeight;
+function forceRevealInView(containerSelector, itemSelector, activeClass) {
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
 
-  timelineItems.forEach(item => {
-    if (item.classList.contains("is-visible")) return;
+  const rect = container.getBoundingClientRect();
+  const isInView = rect.top < window.innerHeight && rect.bottom > 0;
 
-    const rect = item.getBoundingClientRect();
+  if (isInView) {
+    container.classList.add("visible");
 
-    if (rect.top < viewportHeight * 0.85) {
-      item.classList.add("is-visible");
-      timelineObserver.unobserve(item);
-    }
-  });
+    document.querySelectorAll(itemSelector).forEach(item => {
+      item.classList.add(activeClass);
+    });
+  }
 }
 
-
-/* =========================
-   RUN FIX AFTER NAVIGATION
-========================= */
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener("click", () => {
-    setTimeout(forceTimelineVisibility, 350);
+    setTimeout(() => {
+      // Force Experience reveal on mobile
+      forceRevealInView(
+        "#experience",
+        "#experience .timeline-item",
+        "is-visible"
+      );
+    }, 350);
   });
 });
 
 
 /* =========================
-   RUN ON LOAD (MOBILE SAFETY NET)
+   SAFETY: RECHECK ON RESIZE
 ========================= */
-window.addEventListener("load", () => {
-  setTimeout(forceTimelineVisibility, 400);
-});
-
-
-/* =========================
-   RUN ON RESIZE (URL BAR COLLAPSE)
-========================= */
-let resizeTimer;
+let resizeTimeout;
 window.addEventListener("resize", () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(forceTimelineVisibility, 250);
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    forceRevealInView(
+      "#experience",
+      "#experience .timeline-item",
+      "is-visible"
+    );
+  }, 300);
 });
