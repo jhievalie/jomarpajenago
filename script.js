@@ -14,6 +14,14 @@ const routes = {
   "/contact": "#contact"
 };
 
+/* =========================
+   FORCE /home AS DEFAULT
+========================= */
+
+if (window.location.pathname === "/") {
+  history.replaceState({}, "", "/home");
+}
+
 document.querySelectorAll('a[href^="/"]').forEach(link => {
 
   link.addEventListener("click", e => {
@@ -38,10 +46,13 @@ document.querySelectorAll('a[href^="/"]').forEach(link => {
 // Open correct section on refresh
 window.addEventListener("load", () => {
 
-  const section = document.querySelector(routes[window.location.pathname]);
+  const currentPath = window.location.pathname;
+  const section = document.querySelector(routes[currentPath]);
 
   if (section) {
-    section.scrollIntoView();
+    section.scrollIntoView({
+      behavior: "smooth"
+    });
   }
 
 });
@@ -139,6 +150,7 @@ timelineItems.forEach(item => timelineObserver.observe(item));
 //     }, 300);
 //   });
 // });
+
 
 
 
