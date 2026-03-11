@@ -54,9 +54,13 @@ body {
   font-size: 20px;
 }
 
-.logo a,
-.logo a:visited {
+.logo a {
   text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.logo a:visited {
   color: inherit;
 }
 
@@ -846,4 +850,5 @@ body {
   }
 
 }
+
 
