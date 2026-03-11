@@ -54,6 +54,16 @@ body {
   font-size: 20px;
 }
 
+.logo a,
+.logo a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo a:hover {
+  opacity: 0.8;
+}
+
 .nav-links {
   display: flex;
 }
@@ -836,3 +846,4 @@ body {
   }
 
 }
+
