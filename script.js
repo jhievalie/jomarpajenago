@@ -1,3 +1,12 @@
+// Handle redirected paths from 404.html
+const urlParams = new URLSearchParams(window.location.search);
+const path = urlParams.get("path");
+
+if (path) {
+  history.replaceState(null, "", path);
+}
+
+
 /* =========================
    MOBILE NAV
 ========================= */
@@ -91,3 +100,4 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }, 300);
   });
 });
+
