@@ -23,6 +23,8 @@ document.querySelectorAll('a[href^="/"]').forEach(link => {
     const path = link.getAttribute("href");
     const section = document.querySelector(routes[path]);
 
+    if (!section) return;
+
     history.pushState({}, "", path);
 
     section.scrollIntoView({
@@ -137,6 +139,7 @@ timelineItems.forEach(item => timelineObserver.observe(item));
 //     }, 300);
 //   });
 // });
+
 
 
 
