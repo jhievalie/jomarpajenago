@@ -108,34 +108,35 @@ timelineItems.forEach(item => timelineObserver.observe(item));
 /* =========================
    CUSTOM NAVIGATION (NO HASH)
 ========================= */
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault(); // stop default anchor behavior
+// document.querySelectorAll('a[href^="#"]').forEach(link => {
+//   link.addEventListener("click", e => {
+    // e.preventDefault();
 
-    const targetId = link.getAttribute("href");
-    const targetEl = document.querySelector(targetId);
+    // const targetId = link.getAttribute("href");
+    // const targetEl = document.querySelector(targetId);
 
-    if (!targetEl) return;
+    // if (!targetEl) return;
 
     // Smooth scroll
-    targetEl.scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    // targetEl.scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start"
+    // });
 
     // 🔥 Remove hash immediately
-    history.replaceState(null, "", window.location.pathname);
+    // history.replaceState(null, "", window.location.pathname);
 
     // Force reveal for mobile edge cases (Experience section)
-    setTimeout(() => {
-      if (targetId === "#experience") {
-        targetEl.classList.add("visible");
-        document
-          .querySelectorAll("#experience .timeline-item")
-          .forEach(item => item.classList.add("is-visible"));
-      }
-    }, 300);
-  });
-});
+//     setTimeout(() => {
+//       if (targetId === "#experience") {
+//         targetEl.classList.add("visible");
+//         document
+//           .querySelectorAll("#experience .timeline-item")
+//           .forEach(item => item.classList.add("is-visible"));
+//       }
+//     }, 300);
+//   });
+// });
+
 
 
