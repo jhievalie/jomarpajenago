@@ -6,6 +6,43 @@ if (path) {
   history.replaceState(null, "", path);
 }
 
+const routes = {
+  "/home": "#home",
+  "/about": "#about",
+  "/services": "#services",
+  "/experience": "#experience",
+  "/contact": "#contact"
+};
+
+document.querySelectorAll('a[href^="/"]').forEach(link => {
+
+  link.addEventListener("click", e => {
+
+    e.preventDefault();
+
+    const path = link.getAttribute("href");
+    const section = document.querySelector(routes[path]);
+
+    history.pushState({}, "", path);
+
+    section.scrollIntoView({
+      behavior: "smooth"
+    });
+
+  });
+
+});
+
+// Open correct section on refresh
+window.addEventListener("load", () => {
+
+  const section = document.querySelector(routes[window.location.pathname]);
+
+  if (section) {
+    section.scrollIntoView();
+  }
+
+});
 
 /* =========================
    MOBILE NAV
@@ -100,4 +137,5 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
     }, 300);
   });
 });
+
 
