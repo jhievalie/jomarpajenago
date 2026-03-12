@@ -1,10 +1,6 @@
-// Handle redirected paths from 404.html
-const urlParams = new URLSearchParams(window.location.search);
-const path = urlParams.get("path");
-
-if (path) {
-  history.replaceState(null, "", path);
-}
+/* =========================
+   ROUTE CONFIG
+========================= */
 
 const routes = {
   "/home": "#home",
@@ -14,6 +10,27 @@ const routes = {
   "/contact": "#contact"
 };
 
+const sectionRoutes = {
+  home: "/home",
+  about: "/about",
+  services: "/services",
+  experience: "/experience",
+  contact: "/contact"
+};
+
+
+/* =========================
+   HANDLE REDIRECT FROM 404
+========================= */
+
+const urlParams = new URLSearchParams(window.location.search);
+const redirectedPath = urlParams.get("path");
+
+if (redirectedPath) {
+  history.replaceState(null, "", redirectedPath);
+}
+
+
 /* =========================
    FORCE /home AS DEFAULT
 ========================= */
@@ -21,6 +38,11 @@ const routes = {
 if (window.location.pathname === "/") {
   history.replaceState({}, "", "/home");
 }
+
+
+/* =========================
+   NAVIGATION CLICK ROUTING
+========================= */
 
 document.querySelectorAll('a[href^="/"]').forEach(link => {
 
@@ -43,7 +65,11 @@ document.querySelectorAll('a[href^="/"]').forEach(link => {
 
 });
 
-// Open correct section on refresh
+
+/* =========================
+   OPEN CORRECT SECTION ON LOAD
+========================= */
+
 window.addEventListener("load", () => {
 
   const currentPath = window.location.pathname;
@@ -57,9 +83,53 @@ window.addEventListener("load", () => {
 
 });
 
+
+/* =========================
+   UPDATE URL ON SCROLL
+========================= */
+
+const routeObserver = new IntersectionObserver(
+  entries => {
+
+    entries.forEach(entry => {
+
+      if (!entry.isIntersecting) return;
+
+      const id = entry.target.id;
+      const newPath = sectionRoutes[id];
+
+      if (!newPath) return;
+
+      if (window.location.pathname !== newPath) {
+        history.replaceState({}, "", newPath);
+      }
+
+    });
+
+  },
+  {
+    threshold: 0.6
+  }
+);
+
+
+/* observe only routed sections */
+
+Object.keys(sectionRoutes).forEach(id => {
+
+  const section = document.getElementById(id);
+
+  if (section) {
+    routeObserver.observe(section);
+  }
+
+});
+
+
 /* =========================
    MOBILE NAV
 ========================= */
+
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobileNav");
 const closeNav = document.getElementById("closeNav");
@@ -80,17 +150,22 @@ document.querySelectorAll(".mobile-links a").forEach(link => {
 
 
 /* =========================
-   SECTION REVEAL (HOME / ABOUT / SERVICES / CONTACT)
+   SECTION REVEAL ANIMATION
 ========================= */
+
 const animatedSections = document.querySelectorAll(".section-animate");
 
 const sectionObserver = new IntersectionObserver(
   entries => {
+
     entries.forEach(entry => {
+
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
       }
+
     });
+
   },
   { threshold: 0.25 }
 );
@@ -99,59 +174,28 @@ animatedSections.forEach(section => sectionObserver.observe(section));
 
 
 /* =========================
-   TIMELINE REVEAL (EXPERIENCE)
+   TIMELINE REVEAL
 ========================= */
+
 const timelineItems = document.querySelectorAll(".timeline-item");
 
 const timelineObserver = new IntersectionObserver(
   entries => {
+
     entries.forEach(entry => {
+
       if (entry.isIntersecting) {
+
         entry.target.classList.add("is-visible");
+
         timelineObserver.unobserve(entry.target); // animate once
+
       }
+
     });
+
   },
   { threshold: 0.15 }
 );
 
 timelineItems.forEach(item => timelineObserver.observe(item));
-
-
-/* =========================
-   CUSTOM NAVIGATION (NO HASH)
-========================= */
-// document.querySelectorAll('a[href^="#"]').forEach(link => {
-//   link.addEventListener("click", e => {
-    // e.preventDefault();
-
-    // const targetId = link.getAttribute("href");
-    // const targetEl = document.querySelector(targetId);
-
-    // if (!targetEl) return;
-
-    // Smooth scroll
-    // targetEl.scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start"
-    // });
-
-    // 🔥 Remove hash immediately
-    // history.replaceState(null, "", window.location.pathname);
-
-    // Force reveal for mobile edge cases (Experience section)
-//     setTimeout(() => {
-//       if (targetId === "#experience") {
-//         targetEl.classList.add("visible");
-//         document
-//           .querySelectorAll("#experience .timeline-item")
-//           .forEach(item => item.classList.add("is-visible"));
-//       }
-//     }, 300);
-//   });
-// });
-
-
-
-
-
