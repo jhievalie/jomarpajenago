@@ -108,7 +108,8 @@ const routeObserver = new IntersectionObserver(
 
   },
   {
-    threshold: 0.6
+    rootMargin: "-40% 0px -55% 0px",
+    threshold: 0
   }
 );
 
@@ -199,3 +200,4 @@ const timelineObserver = new IntersectionObserver(
 );
 
 timelineItems.forEach(item => timelineObserver.observe(item));
+
