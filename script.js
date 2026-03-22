@@ -6,6 +6,7 @@ const routes = {
   "/home": "#home",
   "/about": "#about",
   "/services": "#services",
+  "/projects": "#projects",
   "/experience": "#experience",
   "/contact": "#contact"
 };
@@ -14,6 +15,7 @@ const sectionRoutes = {
   home: "/home",
   about: "/about",
   services: "/services",
+  projects: "/projects",
   experience: "/experience",
   contact: "/contact"
 };
