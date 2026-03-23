@@ -203,3 +203,126 @@ const timelineObserver = new IntersectionObserver(
 
 timelineItems.forEach(item => timelineObserver.observe(item));
 
+
+/* =========================
+   MODAL - PROJECTS
+========================= */
+
+const modal = document.getElementById("projectModal");
+const closeModal = document.getElementById("closeModal");
+const overlay = document.getElementById("modalOverlay");
+
+// OPEN (attach this to your project card later)
+function openModal() {
+  modal.classList.add("active");
+}
+
+// CLOSE
+closeModal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+overlay.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+
+
+/* =========================
+   IMAGE SLIDER LOGIC
+========================= */
+
+// const img1 = document.getElementById("img1");
+// const img2 = document.getElementById("img2");
+
+// img1.addEventListener("click", () => handleClick(img1, img2));
+// img2.addEventListener("click", () => handleClick(img2, img1));
+
+// function handleClick(clicked, other) {
+
+//   if (clicked.classList.contains("right")) {
+//     clicked.classList.remove("right");
+//     clicked.classList.add("center");
+
+//     other.classList.remove("center");
+//     other.classList.add("left");
+//   }
+
+//   else if (clicked.classList.contains("left")) {
+//     clicked.classList.remove("left");
+//     clicked.classList.add("center");
+
+//     other.classList.remove("center");
+//     other.classList.add("right");
+//   }
+// }
+
+
+/* =========================
+   MULTI IMAGE SLIDER
+========================= */
+
+const images = Array.from(document.querySelectorAll(".stack-img"));
+let current = 0;
+let autoSlide;
+
+/* UPDATE SLIDER STATE */
+function updateSlider() {
+  const total = images.length;
+
+  images.forEach((img, index) => {
+    img.classList.remove("center", "left", "right");
+
+    if (index === current) {
+      img.classList.add("center");
+    }
+    else if (index === (current + 1) % total) {
+      img.classList.add("right");
+    }
+    else if (index === (current - 1 + total) % total) {
+      img.classList.add("left");
+    }
+  });
+}
+
+/* NEXT SLIDE */
+function nextSlide() {
+  current = (current + 1) % images.length;
+  updateSlider();
+}
+
+/* AUTO SLIDE CONTROL */
+function startAutoSlide() {
+  autoSlide = setInterval(nextSlide, 4000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlide);
+}
+
+/* CLICK HANDLER (single, clean) */
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+
+    const total = images.length;
+
+    // pause auto
+    stopAutoSlide();
+
+    if (index === (current + 1) % total) {
+      current = (current + 1) % total;
+    }
+    else if (index === (current - 1 + total) % total) {
+      current = (current - 1 + total) % total;
+    }
+
+    updateSlider();
+
+    // resume auto
+    startAutoSlide();
+  });
+});
+
+/* INIT */
+updateSlider();
+startAutoSlide();
