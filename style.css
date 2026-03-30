@@ -1027,21 +1027,8 @@ body {
     text-align: center;
   }
 
-  .about-photo {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    margin: 0 auto 20px;
-  }
-
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    /* NO cropping */
-    transform: scale(1.2);
-    /* zoom OUT slightly */
+  .about-visual {
+    display: none;
   }
 
   .about-text {
