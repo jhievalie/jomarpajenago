@@ -114,8 +114,10 @@ body {
 }
 
 .subtitle-break {
-  display: block;
+  display: inline;
 }
+
+
 
 /* ABOUT */
 .about {
@@ -1018,6 +1020,12 @@ body {
   .home h1 {
     font-size: 34px;
   }
+
+  .subtitle-break {
+    display: block;
+    margin-top: 4px;
+  }
+  
 
   .about {
     min-height: auto;
