@@ -113,6 +113,10 @@ body {
   color: #444;
 }
 
+.subtitle-break {
+  display: block;
+}
+
 /* ABOUT */
 .about {
   min-height: calc(100vh - 64px);
