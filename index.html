@@ -241,9 +241,33 @@
           </p>
         </div>
 
+        <!-- 2. Superstore Sales Performance Dashboard -->
+        <div class="project-card" onclick="openSuperstoreModal()">
+          <h3>Superstore Sales Performance Dashboard</h3>
+
+          <p class="project-desc">
+            Developed an interactive Power BI dashboard to analyze retail sales
+            performance across regions, customer segments, product categories,
+            and time periods. Built executive KPIs, interactive visualizations,
+            and filters to help identify sales trends, high-performing products,
+            and top customers.
+          </p>
+
+          <div class="project-meta">
+            <span>Power BI</span>
+            <span>DAX</span>
+            <span>Power Query</span>
+            <span>Data Modeling</span>
+          </div>
+
+          <p class="project-impact">
+            Provided a centralized view of retail performance to support
+            faster, data-driven business decisions.
+          </p>
+        </div>
 
         <!-- 2. Web Scraping (Ad Performance) -->
-        <div class="project-card">
+        <!-- <div class="project-card">
           <h3>Ad Performance Web Scraping Automation</h3>
           <p class="project-desc">
             Built a Python-based web scraping solution to extract publisher performance data from affiliate platforms
@@ -261,7 +285,7 @@
           <p class="project-impact">
             Streamlined ad performance tracking and improved visibility across publisher campaigns.
           </p>
-        </div>
+        </div> -->
 
 
         <!-- 3. Law Firm BI Dashboard -->
@@ -625,6 +649,233 @@
 
         <a href="https://drive.google.com/file/d/1lYGa5QLeiz2apB4A3Ckx4N8zcMsMwau4/view?usp=sharing" target="_blank"
           rel="noopener" class="btn secondary">
+          View Dataset
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- SUPERSTORE SALES PERFORMANCE DASHBOARD MODAL -->
+  <div class="modal" id="superstoreModal">
+    <div class="modal-overlay" id="superstoreModalOverlay"></div>
+
+    <div class="modal-content">
+
+      <!-- Close Button -->
+      <button class="modal-close" id="closeSuperstoreModal">✕</button>
+
+
+      <!-- Project Header -->
+      <div class="modal-header">
+        <h2>Superstore Sales Performance Dashboard</h2>
+
+        <p class="modal-tools">
+          Power BI · DAX · Power Query · Data Modeling
+        </p>
+      </div>
+
+
+      <!-- Dashboard Images -->
+      <div class="modal-image-stack" id="superstoreImageStack">
+
+        <img src="superstore-dashboard-overview.png" class="stack-img" alt="Superstore Sales Performance Dashboard">
+
+        <img src="superstore-sales-trend.png" class="stack-img" alt="Superstore Sales Trend">
+
+        <img src="superstore-top-products.png" class="stack-img" alt="Superstore Top Products">
+
+      </div>
+
+
+      <!-- PROJECT OVERVIEW -->
+      <div class="modal-section">
+        <h3>Project Overview</h3>
+
+        <p>
+          An interactive Sales Performance Dashboard built with Microsoft
+          Power BI to analyze retail sales performance using the Sample
+          Superstore dataset.
+        </p>
+
+        <p>
+          The dashboard provides a comprehensive view of sales performance
+          across different regions, customer segments, product categories,
+          and time periods.
+        </p>
+
+        <p>
+          The project demonstrates data modeling, Power Query transformations,
+          DAX calculations, and dashboard design following Power BI best
+          practices.
+        </p>
+      </div>
+
+
+      <!-- BUSINESS OBJECTIVES -->
+      <div class="modal-section">
+        <h3>Business Objectives</h3>
+
+        <ul class="modal-list">
+          <li>Monitor overall sales performance</li>
+          <li>Identify top-performing products and customers</li>
+          <li>Compare sales across regions and categories</li>
+          <li>Analyze sales trends over time</li>
+          <li>Support data-driven business decisions</li>
+        </ul>
+      </div>
+
+
+      <!-- BUSINESS QUESTIONS -->
+      <div class="modal-section">
+        <h3>Business Questions</h3>
+
+        <ul class="modal-list">
+          <li>How much revenue was generated?</li>
+          <li>How many orders were placed?</li>
+          <li>How are sales trending over time?</li>
+          <li>Which regions perform best?</li>
+          <li>Which products generate the highest sales?</li>
+          <li>Who are the top customers?</li>
+        </ul>
+      </div>
+
+
+      <!-- KEY FEATURES -->
+      <div class="modal-section">
+        <h3>Key Features</h3>
+
+        <h4>Executive KPIs</h4>
+
+        <ul class="modal-list">
+          <li>Total Sales</li>
+          <li>Total Orders</li>
+          <li>Average Order Value</li>
+          <li>Average Sales per Day</li>
+        </ul>
+
+
+        <h4>Interactive Visualizations</h4>
+
+        <ul class="modal-list">
+          <li>Monthly Sales Trend</li>
+          <li>Sales by Category</li>
+          <li>Sales by Region</li>
+          <li>Top 10 Products</li>
+          <li>Top 10 Customers</li>
+        </ul>
+
+
+        <h4>Interactive Filters</h4>
+
+        <ul class="modal-list">
+          <li>Year</li>
+          <li>Region</li>
+          <li>Category</li>
+          <li>Segment</li>
+        </ul>
+      </div>
+
+
+      <!-- DATA MODEL -->
+      <div class="modal-section">
+        <h3>Data Model</h3>
+
+        <p>
+          The report follows a simple star-schema approach designed to
+          support efficient reporting and analysis.
+        </p>
+
+        <ul class="modal-list">
+          <li>Orders — Fact Table</li>
+          <li>Calendar — Date Dimension</li>
+          <li>_Measures — DAX Measures</li>
+        </ul>
+
+        <p>
+          The model was structured to support time-based analysis and
+          consistent business calculations across the dashboard.
+        </p>
+      </div>
+
+
+      <!-- DATA & PROCESS -->
+      <div class="modal-section">
+        <h3>Data & Process</h3>
+
+        <p>
+          Data preparation and reporting were handled using Power Query,
+          DAX, and Power BI's data modeling capabilities.
+        </p>
+
+        <ul class="modal-list">
+          <li>Validated data types across the dataset</li>
+          <li>Converted and standardized date fields</li>
+          <li>Created a dedicated Calendar table</li>
+          <li>Performed data quality checks</li>
+          <li>Created model relationships</li>
+          <li>Built custom DAX measures for business KPIs</li>
+        </ul>
+      </div>
+
+
+      <!-- KEY INSIGHTS -->
+      <div class="modal-section">
+        <h3>Key Insights</h3>
+
+        <p>
+          The dashboard enables users to explore retail performance and
+          identify trends through interactive visualizations.
+        </p>
+
+        <ul class="modal-list">
+          <li>Monitor sales performance across different regions</li>
+          <li>Identify high-performing product categories</li>
+          <li>Discover top-performing products and customers</li>
+          <li>Analyze monthly sales trends</li>
+          <li>Compare performance across customer segments</li>
+        </ul>
+      </div>
+
+
+      <!-- RESULT / IMPACT -->
+      <div class="modal-section">
+        <h3>Result & Impact</h3>
+
+        <p>
+          The dashboard provides business users with a centralized,
+          interactive view of retail sales performance, making it easier
+          to monitor KPIs, identify trends, compare performance, and
+          support data-driven decisions.
+        </p>
+      </div>
+
+
+      <!-- FUTURE IMPROVEMENTS -->
+      <div class="modal-section">
+        <h3>Future Improvements</h3>
+
+        <ul class="modal-list">
+          <li>Drill-through pages</li>
+          <li>Bookmarks and navigation</li>
+          <li>Tooltip pages</li>
+          <li>Mobile-optimized layout</li>
+          <li>Custom Power BI visual (.pbiviz)</li>
+          <li>Additional business KPIs</li>
+        </ul>
+      </div>
+
+
+      <!-- PROJECT LINKS -->
+      <div class="modal-links">
+
+        <a href="#" target="_blank" rel="noopener" class="btn primary">
+          View Dashboard
+        </a>
+
+        <a href="#" target="_blank" rel="noopener" class="btn secondary">
           View Dataset
         </a>
 
