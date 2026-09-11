@@ -262,67 +262,624 @@ overlay.addEventListener("click", () => {
    MULTI IMAGE SLIDER
 ========================= */
 
-const images = Array.from(document.querySelectorAll(".stack-img"));
+// const images = Array.from(document.querySelectorAll(".stack-img"));
+// let current = 0;
+// let autoSlide;
+
+// /* UPDATE SLIDER STATE */
+// function updateSlider() {
+//   const total = images.length;
+
+//   images.forEach((img, index) => {
+//     img.classList.remove("center", "left", "right");
+
+//     if (index === current) {
+//       img.classList.add("center");
+//     }
+//     else if (index === (current + 1) % total) {
+//       img.classList.add("right");
+//     }
+//     else if (index === (current - 1 + total) % total) {
+//       img.classList.add("left");
+//     }
+//   });
+// }
+
+// /* NEXT SLIDE */
+// function nextSlide() {
+//   current = (current + 1) % images.length;
+//   updateSlider();
+// }
+
+// /* AUTO SLIDE CONTROL */
+// function startAutoSlide() {
+//   autoSlide = setInterval(nextSlide, 4000);
+// }
+
+// function stopAutoSlide() {
+//   clearInterval(autoSlide);
+// }
+
+// /* CLICK HANDLER (single, clean) */
+// images.forEach((img, index) => {
+//   img.addEventListener("click", () => {
+
+//     const total = images.length;
+
+//     // pause auto
+//     stopAutoSlide();
+
+//     if (index === (current + 1) % total) {
+//       current = (current + 1) % total;
+//     }
+//     else if (index === (current - 1 + total) % total) {
+//       current = (current - 1 + total) % total;
+//     }
+
+//     updateSlider();
+
+//     // resume auto
+//     startAutoSlide();
+//   });
+// });
+
+// /* INIT */
+// updateSlider();
+// startAutoSlide();
+
+/* =========================
+   MULTI IMAGE SLIDER
+========================= */
+
+
+/* =========================
+   E-COMMERCE SLIDER
+========================= */
+
+const images = Array.from(
+  document.querySelectorAll("#imageStack .stack-img")
+);
+
 let current = 0;
 let autoSlide;
 
-/* UPDATE SLIDER STATE */
+
+/* UPDATE E-COMMERCE SLIDER */
+
 function updateSlider() {
+
   const total = images.length;
 
   images.forEach((img, index) => {
-    img.classList.remove("center", "left", "right");
+
+    img.classList.remove(
+      "center",
+      "left",
+      "right"
+    );
 
     if (index === current) {
+
       img.classList.add("center");
+
     }
-    else if (index === (current + 1) % total) {
+
+    else if (
+      index === (current + 1) % total
+    ) {
+
       img.classList.add("right");
+
     }
-    else if (index === (current - 1 + total) % total) {
+
+    else if (
+      index === (current - 1 + total) % total
+    ) {
+
       img.classList.add("left");
+
     }
+
   });
+
 }
 
-/* NEXT SLIDE */
+
+/* NEXT E-COMMERCE SLIDE */
+
 function nextSlide() {
-  current = (current + 1) % images.length;
+
+  current =
+    (current + 1) % images.length;
+
   updateSlider();
+
 }
 
-/* AUTO SLIDE CONTROL */
+
+/* AUTO SLIDE */
+
 function startAutoSlide() {
-  autoSlide = setInterval(nextSlide, 4000);
+
+  autoSlide =
+    setInterval(
+      nextSlide,
+      4000
+    );
+
 }
+
 
 function stopAutoSlide() {
+
   clearInterval(autoSlide);
+
 }
 
-/* CLICK HANDLER (single, clean) */
+
+/* E-COMMERCE CLICK */
+
 images.forEach((img, index) => {
+
   img.addEventListener("click", () => {
 
     const total = images.length;
 
-    // pause auto
     stopAutoSlide();
 
-    if (index === (current + 1) % total) {
-      current = (current + 1) % total;
+
+    if (
+      index ===
+      (current + 1) % total
+    ) {
+
+      current =
+        (current + 1) % total;
+
     }
-    else if (index === (current - 1 + total) % total) {
-      current = (current - 1 + total) % total;
+
+    else if (
+      index ===
+      (current - 1 + total) % total
+    ) {
+
+      current =
+        (current - 1 + total) % total;
+
     }
+
 
     updateSlider();
 
-    // resume auto
     startAutoSlide();
+
   });
+
 });
 
-/* INIT */
-updateSlider();
-startAutoSlide();
+
+/* INIT E-COMMERCE */
+
+if (images.length > 0) {
+
+  updateSlider();
+
+  startAutoSlide();
+
+}
+
+
+
+/* =========================
+   SUPERSTORE MODAL
+========================= */
+
+const superstoreModal =
+  document.getElementById("superstoreModal");
+
+const closeSuperstoreModal =
+  document.getElementById("closeSuperstoreModal");
+
+const superstoreModalOverlay =
+  document.getElementById("superstoreModalOverlay");
+
+
+/* OPEN SUPERSTORE */
+
+function openSuperstoreModal() {
+
+  superstoreModal.classList.add("active");
+
+  startSuperstoreAutoSlide();
+
+}
+
+
+/* CLOSE SUPERSTORE */
+
+function closeSuperstore() {
+
+  superstoreModal.classList.remove("active");
+
+  stopSuperstoreAutoSlide();
+
+}
+
+
+closeSuperstoreModal.addEventListener(
+  "click",
+  closeSuperstore
+);
+
+
+superstoreModalOverlay.addEventListener(
+  "click",
+  closeSuperstore
+);
+
+
+
+/* =========================
+   SUPERSTORE SLIDER
+   SAME SLIDER SYSTEM
+========================= */
+
+const superstoreImages = Array.from(
+  document.querySelectorAll(
+    "#superstoreImageStack .stack-img"
+  )
+);
+
+let superstoreCurrent = 0;
+let superstoreAutoSlide;
+
+
+/* UPDATE SUPERSTORE */
+
+function updateSuperstoreSlider() {
+
+  const total =
+    superstoreImages.length;
+
+  superstoreImages.forEach(
+    (img, index) => {
+
+      img.classList.remove(
+        "center",
+        "left",
+        "right"
+      );
+
+
+      if (
+        index === superstoreCurrent
+      ) {
+
+        img.classList.add("center");
+
+      }
+
+      else if (
+        index ===
+        (superstoreCurrent + 1) % total
+      ) {
+
+        img.classList.add("right");
+
+      }
+
+      else if (
+        index ===
+        (superstoreCurrent - 1 + total) % total
+      ) {
+
+        img.classList.add("left");
+
+      }
+
+    }
+  );
+
+}
+
+
+/* NEXT SUPERSTORE */
+
+function nextSuperstoreSlide() {
+
+  superstoreCurrent =
+    (superstoreCurrent + 1) %
+    superstoreImages.length;
+
+  updateSuperstoreSlider();
+
+}
+
+
+/* START SUPERSTORE */
+
+function startSuperstoreAutoSlide() {
+
+  stopSuperstoreAutoSlide();
+
+  superstoreAutoSlide =
+    setInterval(
+      nextSuperstoreSlide,
+      4000
+    );
+
+}
+
+
+/* STOP SUPERSTORE */
+
+function stopSuperstoreAutoSlide() {
+
+  clearInterval(
+    superstoreAutoSlide
+  );
+
+}
+
+
+/* SUPERSTORE CLICK */
+
+superstoreImages.forEach(
+  (img, index) => {
+
+    img.addEventListener(
+      "click",
+      () => {
+
+        const total =
+          superstoreImages.length;
+
+        stopSuperstoreAutoSlide();
+
+
+        if (
+          index ===
+          (superstoreCurrent + 1) % total
+        ) {
+
+          superstoreCurrent =
+            (superstoreCurrent + 1) % total;
+
+        }
+
+        else if (
+          index ===
+          (superstoreCurrent - 1 + total) % total
+        ) {
+
+          superstoreCurrent =
+            (superstoreCurrent - 1 + total) % total;
+
+        }
+
+
+        updateSuperstoreSlider();
+
+        startSuperstoreAutoSlide();
+
+      }
+    );
+
+  }
+);
+
+
+/* INIT SUPERSTORE */
+
+if (superstoreImages.length > 0) {
+
+  updateSuperstoreSlider();
+ 
+}
+
+
+/* =========================
+   HR ANALYTICS MODAL
+========================= */
+
+const hrModal =
+  document.getElementById("hrModal");
+
+const closeHRModal =
+  document.getElementById("closeHRModal");
+
+const hrModalOverlay =
+  document.getElementById("hrModalOverlay");
+
+
+/* OPEN HR MODAL */
+
+function openHRModal() {
+
+  hrModal.classList.add("active");
+
+  startHRAutoSlide();
+
+}
+
+
+/* CLOSE HR MODAL */
+
+function closeHR() {
+
+  hrModal.classList.remove("active");
+
+  stopHRAutoSlide();
+
+}
+
+
+closeHRModal.addEventListener(
+  "click",
+  closeHR
+);
+
+
+hrModalOverlay.addEventListener(
+  "click",
+  closeHR
+);
+
+
+/* =========================
+   HR ANALYTICS SLIDER
+========================= */
+
+const hrImages = Array.from(
+  document.querySelectorAll(
+    "#hrImageStack .stack-img"
+  )
+);
+
+let hrCurrent = 0;
+
+let hrAutoSlide;
+
+
+/* UPDATE HR SLIDER */
+
+function updateHRSlider() {
+
+  const total =
+    hrImages.length;
+
+  hrImages.forEach(
+    (img, index) => {
+
+      img.classList.remove(
+        "center",
+        "left",
+        "right"
+      );
+
+
+      if (
+        index === hrCurrent
+      ) {
+
+        img.classList.add("center");
+
+      }
+
+      else if (
+        index ===
+        (hrCurrent + 1) % total
+      ) {
+
+        img.classList.add("right");
+
+      }
+
+      else if (
+        index ===
+        (hrCurrent - 1 + total) % total
+      ) {
+
+        img.classList.add("left");
+
+      }
+
+    }
+  );
+
+}
+
+
+/* NEXT HR SLIDE */
+
+function nextHRSlide() {
+
+  hrCurrent =
+    (hrCurrent + 1) %
+    hrImages.length;
+
+  updateHRSlider();
+
+}
+
+
+/* START HR AUTO SLIDE */
+
+function startHRAutoSlide() {
+
+  stopHRAutoSlide();
+
+  hrAutoSlide =
+    setInterval(
+      nextHRSlide,
+      4000
+    );
+
+}
+
+
+/* STOP HR AUTO SLIDE */
+
+function stopHRAutoSlide() {
+
+  clearInterval(
+    hrAutoSlide
+  );
+
+}
+
+
+/* HR CLICK */
+
+hrImages.forEach(
+  (img, index) => {
+
+    img.addEventListener(
+      "click",
+      () => {
+
+        const total =
+          hrImages.length;
+
+        stopHRAutoSlide();
+
+
+        if (
+          index ===
+          (hrCurrent + 1) % total
+        ) {
+
+          hrCurrent =
+            (hrCurrent + 1) % total;
+
+        }
+
+        else if (
+          index ===
+          (hrCurrent - 1 + total) % total
+        ) {
+
+          hrCurrent =
+            (hrCurrent - 1 + total) % total;
+
+        }
+
+
+        updateHRSlider();
+
+        startHRAutoSlide();
+
+      }
+    );
+
+  }
+);
+
+
+/* INIT HR */
+
+if (hrImages.length > 0) {
+
+  updateHRSlider();
+
+}
