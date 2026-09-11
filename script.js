@@ -138,19 +138,17 @@ const mobileNav = document.getElementById("mobileNav");
 const closeNav = document.getElementById("closeNav");
 
 hamburger?.addEventListener("click", () => {
-  mobileNav?.classList.add("active");
+  mobileNav.classList.add("active");
 });
 
 closeNav?.addEventListener("click", () => {
-  mobileNav?.classList.remove("active");
+  mobileNav.classList.remove("active");
 });
 
 document.querySelectorAll(".mobile-links a").forEach(link => {
-
   link.addEventListener("click", () => {
-    mobileNav?.classList.remove("active");
+    mobileNav.classList.remove("active");
   });
-
 });
 
 
@@ -158,8 +156,7 @@ document.querySelectorAll(".mobile-links a").forEach(link => {
    SECTION REVEAL ANIMATION
 ========================= */
 
-const animatedSections =
-  document.querySelectorAll(".section-animate");
+const animatedSections = document.querySelectorAll(".section-animate");
 
 const sectionObserver = new IntersectionObserver(
   entries => {
@@ -176,17 +173,14 @@ const sectionObserver = new IntersectionObserver(
   { threshold: 0.25 }
 );
 
-animatedSections.forEach(section => {
-  sectionObserver.observe(section);
-});
+animatedSections.forEach(section => sectionObserver.observe(section));
 
 
 /* =========================
    TIMELINE REVEAL
 ========================= */
 
-const timelineItems =
-  document.querySelectorAll(".timeline-item");
+const timelineItems = document.querySelectorAll(".timeline-item");
 
 const timelineObserver = new IntersectionObserver(
   entries => {
@@ -197,7 +191,7 @@ const timelineObserver = new IntersectionObserver(
 
         entry.target.classList.add("is-visible");
 
-        timelineObserver.unobserve(entry.target);
+        timelineObserver.unobserve(entry.target); // animate once
 
       }
 
@@ -207,427 +201,128 @@ const timelineObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 
-timelineItems.forEach(item => {
-  timelineObserver.observe(item);
-});
+timelineItems.forEach(item => timelineObserver.observe(item));
 
 
 /* =========================
-   PROJECT MODALS
+   MODAL - PROJECTS
 ========================= */
 
+const modal = document.getElementById("projectModal");
+const closeModal = document.getElementById("closeModal");
+const overlay = document.getElementById("modalOverlay");
 
-/* =========================
-   E-COMMERCE MODAL
-========================= */
-
-const ecommerceModal =
-  document.getElementById("projectModal");
-
-const ecommerceClose =
-  document.getElementById("closeModal");
-
-const ecommerceOverlay =
-  document.getElementById("modalOverlay");
-
-
-/* OPEN E-COMMERCE */
-
+// OPEN (attach this to your project card later)
 function openModal() {
-
-  ecommerceModal?.classList.add("active");
-
-  document.body.classList.add("modal-open");
-
+  modal.classList.add("active");
 }
 
+// CLOSE
+closeModal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
 
-/* CLOSE E-COMMERCE */
-
-function closeEcommerceModal() {
-
-  ecommerceModal?.classList.remove("active");
-
-  document.body.classList.remove("modal-open");
-
-}
-
-
-ecommerceClose?.addEventListener(
-  "click",
-  closeEcommerceModal
-);
-
-ecommerceOverlay?.addEventListener(
-  "click",
-  closeEcommerceModal
-);
-
-
-/* =========================
-   SUPERSTORE MODAL
-========================= */
-
-const superstoreModal =
-  document.getElementById("superstoreModal");
-
-const superstoreClose =
-  document.getElementById("closeSuperstoreModal");
-
-const superstoreOverlay =
-  document.getElementById("superstoreModalOverlay");
-
-
-/* OPEN SUPERSTORE */
-
-function openSuperstoreModal() {
-
-  superstoreModal?.classList.add("active");
-
-  document.body.classList.add("modal-open");
-
-}
-
-
-/* CLOSE SUPERSTORE */
-
-function closeSuperstoreModal() {
-
-  superstoreModal?.classList.remove("active");
-
-  document.body.classList.remove("modal-open");
-
-}
-
-
-superstoreClose?.addEventListener(
-  "click",
-  closeSuperstoreModal
-);
-
-superstoreOverlay?.addEventListener(
-  "click",
-  closeSuperstoreModal
-);
-
-
-/* =========================
-   CLOSE MODALS WITH ESCAPE
-========================= */
-
-document.addEventListener("keydown", e => {
-
-  if (e.key !== "Escape") return;
-
-  closeEcommerceModal();
-  closeSuperstoreModal();
-
+overlay.addEventListener("click", () => {
+  modal.classList.remove("active");
 });
 
 
+
 /* =========================
-   E-COMMERCE IMAGE SLIDER
+   IMAGE SLIDER LOGIC
 ========================= */
 
-const ecommerceImages =
-  Array.from(
-    document.querySelectorAll(
-      "#imageStack .stack-img"
-    )
-  );
+// const img1 = document.getElementById("img1");
+// const img2 = document.getElementById("img2");
 
-let ecommerceCurrent = 0;
-let ecommerceAutoSlide = null;
+// img1.addEventListener("click", () => handleClick(img1, img2));
+// img2.addEventListener("click", () => handleClick(img2, img1));
+
+// function handleClick(clicked, other) {
+
+//   if (clicked.classList.contains("right")) {
+//     clicked.classList.remove("right");
+//     clicked.classList.add("center");
+
+//     other.classList.remove("center");
+//     other.classList.add("left");
+//   }
+
+//   else if (clicked.classList.contains("left")) {
+//     clicked.classList.remove("left");
+//     clicked.classList.add("center");
+
+//     other.classList.remove("center");
+//     other.classList.add("right");
+//   }
+// }
 
 
-/* UPDATE E-COMMERCE SLIDER */
+/* =========================
+   MULTI IMAGE SLIDER
+========================= */
 
-function updateEcommerceSlider() {
+const images = Array.from(document.querySelectorAll(".stack-img"));
+let current = 0;
+let autoSlide;
 
-  const total = ecommerceImages.length;
+/* UPDATE SLIDER STATE */
+function updateSlider() {
+  const total = images.length;
 
-  if (!total) return;
+  images.forEach((img, index) => {
+    img.classList.remove("center", "left", "right");
 
-  ecommerceImages.forEach((img, index) => {
-
-    img.classList.remove(
-      "center",
-      "left",
-      "right"
-    );
-
-    if (index === ecommerceCurrent) {
-
+    if (index === current) {
       img.classList.add("center");
-
     }
-
-    else if (
-      index ===
-      (ecommerceCurrent + 1) % total
-    ) {
-
+    else if (index === (current + 1) % total) {
       img.classList.add("right");
-
     }
-
-    else if (
-      index ===
-      (ecommerceCurrent - 1 + total) % total
-    ) {
-
+    else if (index === (current - 1 + total) % total) {
       img.classList.add("left");
-
     }
-
   });
-
 }
 
-
-/* NEXT E-COMMERCE IMAGE */
-
-function nextEcommerceSlide() {
-
-  if (ecommerceImages.length <= 1) return;
-
-  ecommerceCurrent =
-    (ecommerceCurrent + 1) %
-    ecommerceImages.length;
-
-  updateEcommerceSlider();
-
+/* NEXT SLIDE */
+function nextSlide() {
+  current = (current + 1) % images.length;
+  updateSlider();
 }
 
-
-/* START E-COMMERCE AUTO SLIDE */
-
-function startEcommerceAutoSlide() {
-
-  if (ecommerceImages.length <= 1) return;
-
-  stopEcommerceAutoSlide();
-
-  ecommerceAutoSlide =
-    setInterval(
-      nextEcommerceSlide,
-      4000
-    );
-
+/* AUTO SLIDE CONTROL */
+function startAutoSlide() {
+  autoSlide = setInterval(nextSlide, 4000);
 }
 
-
-/* STOP E-COMMERCE AUTO SLIDE */
-
-function stopEcommerceAutoSlide() {
-
-  if (ecommerceAutoSlide) {
-
-    clearInterval(ecommerceAutoSlide);
-
-    ecommerceAutoSlide = null;
-
-  }
-
+function stopAutoSlide() {
+  clearInterval(autoSlide);
 }
 
-
-/* E-COMMERCE IMAGE CLICK */
-
-ecommerceImages.forEach((img, index) => {
-
+/* CLICK HANDLER (single, clean) */
+images.forEach((img, index) => {
   img.addEventListener("click", () => {
 
-    const total = ecommerceImages.length;
+    const total = images.length;
 
-    if (total <= 1) return;
+    // pause auto
+    stopAutoSlide();
 
-    stopEcommerceAutoSlide();
-
-    if (
-      index ===
-      (ecommerceCurrent + 1) % total
-    ) {
-
-      ecommerceCurrent =
-        (ecommerceCurrent + 1) % total;
-
+    if (index === (current + 1) % total) {
+      current = (current + 1) % total;
+    }
+    else if (index === (current - 1 + total) % total) {
+      current = (current - 1 + total) % total;
     }
 
-    else if (
-      index ===
-      (ecommerceCurrent - 1 + total) % total
-    ) {
+    updateSlider();
 
-      ecommerceCurrent =
-        (ecommerceCurrent - 1 + total) % total;
-
-    }
-
-    updateEcommerceSlider();
-
-    startEcommerceAutoSlide();
-
+    // resume auto
+    startAutoSlide();
   });
-
 });
 
-
-/* INIT E-COMMERCE SLIDER */
-
-updateEcommerceSlider();
-startEcommerceAutoSlide();
-
-
-/* =========================
-   SUPERSTORE IMAGE SLIDER
-========================= */
-
-const superstoreImages =
-  Array.from(
-    document.querySelectorAll(
-      "#superstoreImageStack .stack-img"
-    )
-  );
-
-let superstoreCurrent = 0;
-let superstoreAutoSlide = null;
-
-
-/* UPDATE SUPERSTORE SLIDER */
-
-function updateSuperstoreSlider() {
-
-  const total = superstoreImages.length;
-
-  if (!total) return;
-
-  superstoreImages.forEach((img, index) => {
-
-    img.classList.remove(
-      "center",
-      "left",
-      "right"
-    );
-
-    if (index === superstoreCurrent) {
-
-      img.classList.add("center");
-
-    }
-
-    else if (
-      index ===
-      (superstoreCurrent + 1) % total
-    ) {
-
-      img.classList.add("right");
-
-    }
-
-    else if (
-      index ===
-      (superstoreCurrent - 1 + total) % total
-    ) {
-
-      img.classList.add("left");
-
-    }
-
-  });
-
-}
-
-
-/* NEXT SUPERSTORE IMAGE */
-
-function nextSuperstoreSlide() {
-
-  if (superstoreImages.length <= 1) return;
-
-  superstoreCurrent =
-    (superstoreCurrent + 1) %
-    superstoreImages.length;
-
-  updateSuperstoreSlider();
-
-}
-
-
-/* START SUPERSTORE AUTO SLIDE */
-
-function startSuperstoreAutoSlide() {
-
-  if (superstoreImages.length <= 1) return;
-
-  stopSuperstoreAutoSlide();
-
-  superstoreAutoSlide =
-    setInterval(
-      nextSuperstoreSlide,
-      4000
-    );
-
-}
-
-
-/* STOP SUPERSTORE AUTO SLIDE */
-
-function stopSuperstoreAutoSlide() {
-
-  if (superstoreAutoSlide) {
-
-    clearInterval(superstoreAutoSlide);
-
-    superstoreAutoSlide = null;
-
-  }
-
-}
-
-
-/* SUPERSTORE IMAGE CLICK */
-
-superstoreImages.forEach((img, index) => {
-
-  img.addEventListener("click", () => {
-
-    const total = superstoreImages.length;
-
-    if (total <= 1) return;
-
-    stopSuperstoreAutoSlide();
-
-    if (
-      index ===
-      (superstoreCurrent + 1) % total
-    ) {
-
-      superstoreCurrent =
-        (superstoreCurrent + 1) % total;
-
-    }
-
-    else if (
-      index ===
-      (superstoreCurrent - 1 + total) % total
-    ) {
-
-      superstoreCurrent =
-        (superstoreCurrent - 1 + total) % total;
-
-    }
-
-    updateSuperstoreSlider();
-
-    startSuperstoreAutoSlide();
-
-  });
-
-});
-
-
-/* INIT SUPERSTORE SLIDER */
-
-updateSuperstoreSlider();
-startSuperstoreAutoSlide();
+/* INIT */
+updateSlider();
+startAutoSlide();
