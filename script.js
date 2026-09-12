@@ -1,155 +1,44 @@
-// /* =========================
-//    ROUTE CONFIG
-// ========================= */
-
-// const routes = {
-//   "/home": "#home",
-//   "/about": "#about",
-//   "/services": "#services",
-//   "/projects": "#projects",
-//   "/experience": "#experience",
-//   "/contact": "#contact"
-// };
-
-// const sectionRoutes = {
-//   home: "/home",
-//   about: "/about",
-//   services: "/services",
-//   projects: "/projects",
-//   experience: "/experience",
-//   contact: "/contact"
-// };
-
-
-// /* =========================
-//    HANDLE REDIRECT FROM 404
-// ========================= */
-
-// const urlParams = new URLSearchParams(window.location.search);
-// const redirectedPath = urlParams.get("path");
-
-// if (redirectedPath) {
-//   history.replaceState(null, "", redirectedPath);
-// }
-
-
-// /* =========================
-//    FORCE /home AS DEFAULT
-// ========================= */
-
-// if (window.location.pathname === "/") {
-//   history.replaceState({}, "", "/home");
-// }
-
-
-// /* =========================
-//    NAVIGATION CLICK ROUTING
-// ========================= */
-
-// document.querySelectorAll('a[href^="/"]').forEach(link => {
-
-//   link.addEventListener("click", e => {
-
-//     e.preventDefault();
-
-//     const path = link.getAttribute("href");
-//     const section = document.querySelector(routes[path]);
-
-//     if (!section) return;
-
-//     history.pushState({}, "", path);
-
-//     section.scrollIntoView({
-//       behavior: "smooth"
-//     });
-
-//   });
-
-// });
-
-
-// /* =========================
-//    OPEN CORRECT SECTION ON LOAD
-// ========================= */
-
-// window.addEventListener("load", () => {
-
-//   const currentPath = window.location.pathname;
-//   const section = document.querySelector(routes[currentPath]);
-
-//   if (section) {
-//     section.scrollIntoView({
-//       behavior: "smooth"
-//     });
-//   }
-
-// });
-
-
-// /* =========================
-//    UPDATE URL ON SCROLL
-// ========================= */
-
-// const routeObserver = new IntersectionObserver(
-//   entries => {
-
-//     entries.forEach(entry => {
-
-//       if (!entry.isIntersecting) return;
-
-//       const id = entry.target.id;
-//       const newPath = sectionRoutes[id];
-
-//       if (!newPath) return;
-
-//       if (window.location.pathname !== newPath) {
-//         history.replaceState({}, "", newPath);
-//       }
-
-//     });
-
-//   },
-//   {
-//     rootMargin: "-40% 0px -55% 0px",
-//     threshold: 0
-//   }
-// );
-
-
-// /* observe only routed sections */
-
-// Object.keys(sectionRoutes).forEach(id => {
-
-//   const section = document.getElementById(id);
-
-//   if (section) {
-//     routeObserver.observe(section);
-//   }
-
-// });
-
-
 /* =========================
-   HASH ROUTING
-   GITHUB PAGES SAFE
+   ROUTE CONFIG
 ========================= */
 
 const routes = {
-  "#home": "#home",
-  "#about": "#about",
-  "#services": "#services",
-  "#projects": "#projects",
-  "#experience": "#experience",
-  "#contact": "#contact"
+  "/home": "#home",
+  "/about": "#about",
+  "/services": "#services",
+  "/projects": "#projects",
+  "/experience": "#experience",
+  "/contact": "#contact"
+};
+
+const sectionRoutes = {
+  home: "/home",
+  about: "/about",
+  services: "/services",
+  projects: "/projects",
+  experience: "/experience",
+  contact: "/contact"
 };
 
 
 /* =========================
-   DEFAULT ROUTE
+   HANDLE REDIRECT FROM 404
 ========================= */
 
-if (!window.location.hash) {
-  history.replaceState({}, "", "#home");
+const urlParams = new URLSearchParams(window.location.search);
+const redirectedPath = urlParams.get("path");
+
+if (redirectedPath) {
+  history.replaceState(null, "", redirectedPath);
+}
+
+
+/* =========================
+   FORCE /home AS DEFAULT
+========================= */
+
+if (window.location.pathname === "/") {
+  history.replaceState({}, "", "/home");
 }
 
 
@@ -157,18 +46,18 @@ if (!window.location.hash) {
    NAVIGATION CLICK ROUTING
 ========================= */
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
+document.querySelectorAll('a[href^="/"]').forEach(link => {
 
   link.addEventListener("click", e => {
 
     e.preventDefault();
 
-    const hash = link.getAttribute("href");
-    const section = document.querySelector(routes[hash]);
+    const path = link.getAttribute("href");
+    const section = document.querySelector(routes[path]);
 
     if (!section) return;
 
-    history.pushState({}, "", hash);
+    history.pushState({}, "", path);
 
     section.scrollIntoView({
       behavior: "smooth"
@@ -185,46 +74,20 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 window.addEventListener("load", () => {
 
-  const hash = window.location.hash || "#home";
-  const section = document.querySelector(routes[hash]);
+  const currentPath = window.location.pathname;
+  const section = document.querySelector(routes[currentPath]);
 
   if (section) {
-
-    setTimeout(() => {
-
-      section.scrollIntoView({
-        behavior: "smooth"
-      });
-
-    }, 100);
-
-  }
-
-});
-
-
-/* =========================
-   HANDLE BACK / FORWARD
-========================= */
-
-window.addEventListener("popstate", () => {
-
-  const hash = window.location.hash || "#home";
-  const section = document.querySelector(routes[hash]);
-
-  if (section) {
-
     section.scrollIntoView({
       behavior: "smooth"
     });
-
   }
 
 });
 
 
 /* =========================
-   UPDATE HASH ON SCROLL
+   UPDATE URL ON SCROLL
 ========================= */
 
 const routeObserver = new IntersectionObserver(
@@ -235,10 +98,12 @@ const routeObserver = new IntersectionObserver(
       if (!entry.isIntersecting) return;
 
       const id = entry.target.id;
-      const newHash = `#${id}`;
+      const newPath = sectionRoutes[id];
 
-      if (window.location.hash !== newHash) {
-        history.replaceState({}, "", newHash);
+      if (!newPath) return;
+
+      if (window.location.pathname !== newPath) {
+        history.replaceState({}, "", newPath);
       }
 
     });
@@ -253,9 +118,8 @@ const routeObserver = new IntersectionObserver(
 
 /* observe only routed sections */
 
-Object.keys(routes).forEach(hash => {
+Object.keys(sectionRoutes).forEach(id => {
 
-  const id = hash.substring(1);
   const section = document.getElementById(id);
 
   if (section) {
@@ -263,6 +127,142 @@ Object.keys(routes).forEach(hash => {
   }
 
 });
+
+
+// /* =========================
+//    HASH ROUTING
+//    GITHUB PAGES SAFE
+// ========================= */
+
+// const routes = {
+//   "#home": "#home",
+//   "#about": "#about",
+//   "#services": "#services",
+//   "#projects": "#projects",
+//   "#experience": "#experience",
+//   "#contact": "#contact"
+// };
+
+
+// /* =========================
+//    DEFAULT ROUTE
+// ========================= */
+
+// if (!window.location.hash) {
+//   history.replaceState({}, "", "#home");
+// }
+
+
+// /* =========================
+//    NAVIGATION CLICK ROUTING
+// ========================= */
+
+// document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+//   link.addEventListener("click", e => {
+
+//     e.preventDefault();
+
+//     const hash = link.getAttribute("href");
+//     const section = document.querySelector(routes[hash]);
+
+//     if (!section) return;
+
+//     history.pushState({}, "", hash);
+
+//     section.scrollIntoView({
+//       behavior: "smooth"
+//     });
+
+//   });
+
+// });
+
+
+// /* =========================
+//    OPEN CORRECT SECTION ON LOAD
+// ========================= */
+
+// window.addEventListener("load", () => {
+
+//   const hash = window.location.hash || "#home";
+//   const section = document.querySelector(routes[hash]);
+
+//   if (section) {
+
+//     setTimeout(() => {
+
+//       section.scrollIntoView({
+//         behavior: "smooth"
+//       });
+
+//     }, 100);
+
+//   }
+
+// });
+
+
+// /* =========================
+//    HANDLE BACK / FORWARD
+// ========================= */
+
+// window.addEventListener("popstate", () => {
+
+//   const hash = window.location.hash || "#home";
+//   const section = document.querySelector(routes[hash]);
+
+//   if (section) {
+
+//     section.scrollIntoView({
+//       behavior: "smooth"
+//     });
+
+//   }
+
+// });
+
+
+// /* =========================
+//    UPDATE HASH ON SCROLL
+// ========================= */
+
+// const routeObserver = new IntersectionObserver(
+//   entries => {
+
+//     entries.forEach(entry => {
+
+//       if (!entry.isIntersecting) return;
+
+//       const id = entry.target.id;
+//       const newHash = `#${id}`;
+
+//       if (window.location.hash !== newHash) {
+//         history.replaceState({}, "", newHash);
+//       }
+
+//     });
+
+//   },
+//   {
+//     rootMargin: "-40% 0px -55% 0px",
+//     threshold: 0
+//   }
+// );
+
+
+// /* observe only routed sections */
+
+// Object.keys(routes).forEach(hash => {
+
+//   const id = hash.substring(1);
+//   const section = document.getElementById(id);
+
+//   if (section) {
+//     routeObserver.observe(section);
+//   }
+
+// });
 
 
 /* =========================
